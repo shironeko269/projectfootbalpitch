@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base.html}">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+    rel="stylesheet">
+
+    <title>😈 Stone Devil</title>
+  <link rel="stylesheet" type="text/css" th:href="@{../../usercssjs/assets/css/updateProfile.css}">
+    <style type="text/css">
+        .error
+        {
+            color: red;
+            size: 80%;
+        }
+        .hidden
+        {
+            display:none;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+
+<div class="" layout:fragment="content">
+
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper" >
+        <!-- Top navigation-->
+        <div class="row col-md-12" style="margin-top: 3%;">
+          <div class="col-5"></div>
+          <p class="col-lg-5" style="color: red; font-size: 150%; font-family: inherit; font-weight: bolder; ">CẬP NHẬT HỒ SƠ CỦA BẠN</p>
+
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+          
+              
+              
+
+                <div class=" row col-lg-12 " style="background-color: whitesmoke;" >
+                  
+                  <div class="col-3"></div>
+                
+                <div class="col-lg-8" style=" position: relative;min-height: 700px; background-color: white;">
+
+                  <div class="form-group col-12 col-sm-12 col-md-8 col-lg-12 row myformName " style="margin-top: 20px;">
+                      <label class="col-12 col-sm-12 col-md-4 col-lg-4"  for="name">Tên: </label>
+                      <div class="col-12 col-sm-12 col-md-8 col-lg-8 ">
+                        <input id="idName" class="update-item" type="text" name="name" placeholder="Tên cua bạn">
+                        <div id="name_errorNull" class="error hidden">not null</div>
+                          </div>
+                  </div>           
+                  <div class="form-group col-12 col-sm-12 col-md-8 col-lg-12 row myformDate  ">
+                      <label class="col-12 col-sm-12 col-md-4 col-lg-4 " for="dateOfBirth">Ngày sinh: </label>
+                      <div class="col-12 col-sm-12 col-md-8 col-lg-8 ">
+                        <input id="idDate" class="update-item" type="date" name="DateOfBirth" >
+                        <div id="date_error" class="error hidden">Please enter a valid Date(Date birth smaller today)</div>
+                        <div id="date_errorNull" class="error hidden">not null</div>
+                          </div>                   
+                  </div>
+                  
+                  
+                  <div class="form-group col-12 col-sm-12 col-md-8 col-lg-12 row  ">
+                      <label class="col-md-3  col-lg-4 " for="gender">Giới tính:</label>
+                      <div class="col-12 col-sm-12 col-md-8 col-lg-8 ">
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="1">Name</option>
+                            <option value="2">Nữ</option>
+                          </select>
+                      </div>
+                  </div>
+                  
+                  <div class="form-group col-12 col-sm-12 col-md-8 col-lg-12 row myformEmail ">
+                      <label class="col-12 col-sm-12 col-md-4 col-lg-4 " for="email">Email:</label>
+                      <div class="col-12 col-sm-12 col-md-8 col-lg-8 ">
+                          <input id="idEmail" class="update-item" type="text" name="email" placeholder="@gmail.com">
+                          <div id="email_error" class="error hidden">Vui lòng điền mail hợp lệ</div>
+                          <div id="email_errorNull" class="error hidden">not null</div>
+                          </div>
+                  </div>
+                  
+                  
+                  <div class="form-group col-12 col-sm-12 col-md-8 col-lg-12 row myformPhone " style="">
+                      <label class="col-12 col-sm-12 col-md-4 col-lg-4 " for="phone">Số ĐT:</label>
+                      <div class="col-12 col-sm-12 col-md-8 col-lg-8  ">
+                          <input id="idPhone" class="update-item " type="text" name="phone" placeholder="0929292929">
+                          <div id="phone_error" class="error hidden">Vui lòng điền số điện thoại hợp lêj</div>
+                          <div id="phone_errorNull" class="error hidden">not null</div>
+                          </div>
+                  </div>  
+                      
+                            
+                      
+                  <div class="form-group col-12 col-sm-12 col-md-8 col-lg-12 row myformAddress ">
+                      <label class="col-12 col-sm-12 col-md-4 col-lg-4 " for="address">Địa chỉ: </label> 
+                      <div class="col-12 col-sm-12 col-md-8 col-lg-8 ">
+                          <input id="idAddress" class="update-item" type="text" name="address" placeholder="Địa chỉ">
+                          <div id="address_errorNull" class="error hidden">not null</div>
+                          </div>
+                  </div>
+                  
+                  <div id="idHidePassword" class="error hidden">
+                          <div class="form-group col-12 col-sm-12 col-md-8 col-lg-12" >
+                  <div class="form-group col-12 col-sm-12 col-md-8 col-lg-12 row myformNewPassword "style="margin-top: 15px;">
+                          <label class="col-12 col-sm-12 col-md-4 col-lg-4 " for="phone">New Password:</label>
+                      <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                          <input id="idNewPassword" class="update-item" type="password" name="newPassword" placeholder="*********">
+                          <button id="btnPassword" class="btn btn-outline-secondary buttonHideShow" type="button" >Hide/Show</span></button>
+                          <div id="newPass_error" class="error hidden"> Least 1 uppercase alphabetical character,least 1 lowercase alphabetical character,least 1 numeric character,least one special character,must be eight characters or longer</div>
+                          <div id="newPassword_errorNull" class="error hidden">not null</div>
+                      </div>
+                  </div>
+                              
+                  <div class="form-group col-12 col-sm-12 col-md-8 col-lg-12 row myformConfirmPassword ">
+                          <label class="col-12 col-sm-12 col-md-4 col-lg-4 " for="phone">Confirm Password:</label>
+                      <div class="col-12 col-sm-12 col-md-8 col-lg-8  ">
+                          <input id="idConfirmPassword" class="update-item" type="password" name="confirmPassword" placeholder="*********">
+                          <button id="btnConPassword" class="btn btn-outline-secondary buttonHideShow" type="button">Hide/Show</span></button>
+                          <div id="ConPass_error" class="error hidden">Not match with password</div>
+                          <div id="confirmPassword_errorNull" class="error hidden">not null</div>
+                      </div>
+                  </div>
+              </div>
+                  </div>
+      
+                  
+                  <!-- -------------------------- -->
+
+                  <div class="form-group col-12 col-sm-12 col-md-8 col-lg-12 row " style="display: flex; height: 70px; justify-content: center;align-items: center;">
+                          <button onclick="checkPhone();checkEmail();checkDate();checkPassword();checkEmpty();" 
+                          type="submit" class="btn btn-danger ml-1 checkAll">LƯU THÔNG TIN
+                          </button>                            
+                          <a href="profile.html" class="btn btn-outline-info ml-2" style="width: 120px;">QUAY LẠI</a>
+                  </div>
+              </div>
+                <!-- zzz -->
+              </div>
+
+        </nav>
+        <!-- Page content-->
+    </div>
+        <!-- -------------------------------button------------------------ -->
+
+    <script type="text/javascript">
+        function checkDate(){
+            var date = document.getElementById('idDate').value;
+            var today = new Date();
+            console(today.getMonth);
+            alert("month today"+today.getMonth);
+            alert(today.getDate);
+            if(today.getFullYear-date.getFullYear<=0){
+                document.getElementById('date_error').classList.remove('hidden');
+            }else{
+                if(today.getMonth-date.getMonth<=0){
+                    document.getElementById('date_error').classList.remove('hidden');
+                }else{
+                    if(today.getDate-today.getDate<=0){
+                        document.getElementById('date_error').classList.remove('hidden');
+                    }
+                }
+            }
+        }
+
+
+
+    </script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

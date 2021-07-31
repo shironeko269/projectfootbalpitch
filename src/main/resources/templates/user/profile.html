@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base.html}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <title>😈 Stone Devil</title>
+  <link th:src="@{../../usercssjs/assets/css/styles1.css}" rel="stylesheet" />
+</head>
+
+<body>
+<div class="d-flex" id="wrapper" layout:fragment="content">
+  <!-- Sidebar-->
+  <div class="border-end bg-white" id="sidebar-wrapper">
+    <div class="sidebar-heading border-bottom badge-danger"><i class="fas fa-key" style="margin-right: 5%;"></i>TÀI KHỎA CỦA TÔI</div>
+    <div class="list-group list-group-flush">
+      <a class="list-group-item list-group-item-action list-group-item-light p-3 active" href="#!"><i class="fas fa-id-card" style="margin-right: 5%;"></i>HỒ SƠ</a>
+      <a class="list-group-item list-group-item-action list-group-item-light p-3 "
+         th:href="@{/user/change-password}" href="#"><i class="fas fa-unlock-alt" style="margin-right: 5%;" ></i>THAY ĐỔI MẬT KHẨU</a>
+
+    </div>
+    <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="list-group list-group-flush">
+        <a class="list-group-item list-group-item-action list-group-item-light p-3"
+           th:href="@{/user/history-invoice}" href="#"><i class="fas fa-file-invoice-dollar" style="margin-right: 5%;"></i>LỊCH SỬ ĐẶT HÀNG</a>
+      </div>
+      <div class="list-group list-group-flush">
+        <a class="list-group-item list-group-item-action list-group-item-light p-3"
+           th:href="@{/user/history-invoice-booking}" href="#"><i class="fas fa-file-invoice-dollar" style="margin-right: 5%;"></i>LỊCH SỬ ĐẶT SÂN</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page content wrapper-->
+  <div id="page-content-wrapper">
+    <button class="btn btn-outline-danger" id="sidebarToggle">>></button>
+    <!-- Top navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="margin-left: 250px;">
+      <div class="container-fluid"  style="width: 100%">
+
+        <div class="row col-lg-12">
+
+          <div class="col-lg-8">
+
+            <div class="section-heading">
+              <h2 style="color:#ff0000; margin-left: 5%;">THÔNG TIN CỦA TÔI</h2>
+            </div>
+
+            <div class="form-group col-md-auto">
+              <label class="col-3" for="name">TÊN: </label><a class="col-8"  type="text" id="name">gai xinh</a><br>
+              <label class="col-3" for="dateOfBirth">NGÀY SINH: </label><a class="col-8"  type="text" id="dateOfBirth">1/1/1999</a><br>
+              <label class="col-3" for="gender">GIỚI TÍNH: </label><a class="col-8"  type="text" id="gender">Female</a><br>
+
+              <label class="col-3" for="email">Email: </label><a class="col-8" type="text" id="email">gaixinh@gmail.com</a><br>
+
+              <label class="col-3" for="phone">SỐ ĐT: </label><a class="col-8"  type="text" id="phone">0123456789</a><br>
+              <label class="col-3" for="address">ĐỊA CHỈ: </label><a class="col-3"  type="text" id="address">08, Tong Phuoc Pho, Hoa Cuong, Hai Chau, Da Nang </a> <br>
+              <label class="col-3" for="member">THÀNH VIÊN: </label><a class="col-8"  type="text" id="member">Diamon</a><br>
+
+
+
+            </div>
+
+
+          </div>
+          <div style="float: left; margin-top: 2%;" class="col-lg-4">
+
+            <img src="data:image/png;base64,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" alt="">
+            <br>
+            <div class="form-group col-lg-8 row-cols-lg-2" style="margin-top: 2%;" >
+              <a href="updateProfile.html">
+                <button type="button" class="btn btn-outline-info " style="width: 200px;">CHỈNH SỬA THÔNG TIN</button>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+
+    </nav>
+    <!-- Page content-->
+  </div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base.html}">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+    rel="stylesheet">
+  <script language="text/Javascript">
+    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+    function clearField(t) {                   //declaring the array outside of the
+      if (!cleared[t.id]) {                      // function makes it static and global
+        cleared[t.id] = 1;  // you could use true and false, but that's more typing
+        t.value = '';         // with more chance of typos
+        t.style.color = '#fff';
+      }
+    }
+  </script>
+    <title>😈 Stone Devil</title>
+
+</head>
+
+<body>
+
+
+  <div style="background-color: whitesmoke;" layout:fragment="content">
+
+    <table class="table table-striped table-inverse">
+      <thead class="thead-inverse">
+      <tr>
+        <th><input type="checkbox" class="form-check-input"></th>
+        <th></th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Discount</th>
+        <th>Status</th>
+        <th>Category</th>
+        <th>CategoryId</th>
+        <th>Supplier</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="item,iStat:${products}">
+        <td><input type="checkbox" class="form-check-inline"></td>
+        <td><img src="" width="70" class="img-fluid" alt=""></td>
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.quantity}"></td>
+        <td th:text="${item.price}"></td>
+        <td th:text="${item.discount}"></td>
+        <td th:text="${item.categoryName}"></td>
+        <td th:text="${item.categoryId}"></td>
+        <td th:text="${item.companyName}"></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="latest-products">
+      <div class="container">
+        <div class="row" style="background: white; margin-top: 1%;">
+          <div class="col-md-12">
+            <img src="user/assets/images/sale5.PNG" class="_2dRoLS" style="width: 100%; height: 100px;">
+            <div class="section-heading">
+              <h2 style="color: white;">Best Pitch</h2>
+              <a href="Booking.html">XEM TẤT CẢ CÁC SÂN BÓNG<i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+
+
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailPitch.html"><img src="user/assets/images/Pitch/san_1.jpg" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailPitch.html">
+                    <h4>TÊN SÂN</h4>
+                  </a>
+                </div>
+                  <a href="detailPitch.html">
+                    <button type="button" class="btn btn-outline-danger col-12">XEM THÊM </button>
+                  </a>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailPitch.html"><img src="user/assets/images/Pitch/san_1.jpg" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailPitch.html">
+                    <h4>TÊN SÂN</h4>
+                  </a>
+                </div>
+                  <a href="detailPitch.html">
+                    <button type="button" class="btn btn-outline-danger col-12">XEM THÊM</button>
+                  </a>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailPitch.html"><img src="user/assets/images/Pitch/san_1.jpg" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailPitch.html">
+                    <h4>TÊN SÂN</h4>
+                  </a>
+                </div>
+                  <a href="detailPitch.html">
+                    <button type="button" class="btn btn-outline-danger col-12">XEM THÊM</button>
+                  </a>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailPitch.html"><img src="user/assets/images/Pitch/san_1.jpg" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailPitch.html">
+                    <h4>TÊN SÂN</h4>
+                  </a>
+                </div>
+                  <a href="detailPitch.html">
+                    <button type="button" class="btn btn-outline-danger col-12">XEM THÊM</button>
+                  </a>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailPitch.html"><img src="user/assets/images/Pitch/san_1.jpg" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailPitch.html">
+                    <h4>TÊN SÂN</h4>
+                  </a>
+                </div>
+                  <a href="detailPitch.html">
+                    <button type="button" class="btn btn-outline-danger col-12">XEM THÊM</button>
+                  </a>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailPitch.html"><img src="user/assets/images/Pitch/san_1.jpg" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailPitch.html">
+                    <h4>TÊN SÂN</h4>
+                  </a>
+                </div>
+                  <a href="detailPitch.html">
+                    <button type="button" class="btn btn-outline-danger col-12">XEM THÊM</button>
+                  </a>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailPitch.html"><img src="user/assets/images/Pitch/san_1.jpg" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailPitch.html">
+                    <h4>TÊN SÂN</h4>
+                  </a>
+                </div>
+                  <a href="detailPitch.html">
+                    <button type="button" class="btn btn-outline-danger col-12">XEM THÊM</button>
+                  </a>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailPitch.html"><img src="user/assets/images/Pitch/san_1.jpg" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailPitch.html">
+                    <h4>TÊN SÂN</h4>
+                  </a>
+                </div>
+                  <a href="detailPitch.html">
+                    <button type="button" class="btn btn-outline-danger col-12">XEM THÊM</button>
+                  </a>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          
+          
+          
+
+
+          <img src="user/assets/images/line.PNG" class="_2dRoLS" style="width: 100%; height: 70px;">
+        </div>
+        
+      </div>
+  
+    </div>
+    <div class="latest-products">
+      <div class="container">
+        <div class="row" style="background: white; margin-top: 1%;">
+          <div class="col-md-12">
+            <img src="user/assets/images/sale4.PNG" class="_2dRoLS" style="width: 100%; height: 100px;">
+            <div class="section-heading">
+              <h2 style="color: white;">Wellcome</h2>
+              <a href="products.html">XEM TẤT CẢ CÁC SẢN PHẨM <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailProduct.html"><img src="user/assets/images/Products/giay2.jfif" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailProduct.html">
+                    <h4>TÊN SẢN PHẨM</h4>
+                  </a>
+                  <h6>$25.75</h6>
+                  
+  
+                </div>
+                  <button type="button" class="btn btn-outline-danger col-12">THÊM VÀO GIỎ HÀNG</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailProduct.html"><img src="user/assets/images/Products/giay2.jfif" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailProduct.html">
+                    <h4>TÊN SẢN PHẨM</h4>
+                  </a>
+                  <h6>$25.75</h6>
+                  
+  
+                </div>
+                  <button type="button" class="btn btn-outline-danger col-12">THÊM VÀO GIỎ HÀNG</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailProduct.html"><img src="user/assets/images/Products/giay2.jfif" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailProduct.html">
+                    <h4>TÊN SẢN PHẨM</h4>
+                  </a>
+                  <h6>$25.75</h6>
+                  
+  
+                </div>
+                  <button type="button" class="btn btn-outline-danger col-12">THÊM VÀO GIỎ HÀNG</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailProduct.html"><img src="user/assets/images/Products/giay2.jfif" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailProduct.html">
+                    <h4>TÊN SẢN PHẨM</h4>
+                  </a>
+                  <h6>$25.75</h6>
+                  
+  
+                </div>
+                  <button type="button" class="btn btn-outline-danger col-12">THÊM VÀO GIỎ HÀNG</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailProduct.html"><img src="user/assets/images/Products/giay2.jfif" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailProduct.html">
+                    <h4>TÊN SẢN PHẨM</h4>
+                  </a>
+                  <h6>$25.75</h6>
+                  
+  
+                </div>
+                  <button type="button" class="btn btn-outline-danger col-12">THÊM VÀO GIỎ HÀNG</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="product-item btn-light">
+              <a href="detailProduct.html"><img src="user/assets/images/Products/giay2.jfif" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailProduct.html">
+                    <h4>TÊN SẢN PHẨM</h4>
+                  </a>
+                  <h6>$25.75</h6>
+                  
+  
+                </div>
+                  <button type="button" class="btn btn-outline-danger col-12">THÊM VÀO GIỎ HÀNG</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailProduct.html"><img src="user/assets/images/Products/giay2.jfif" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailProduct.html">
+                    <h4>TÊN SẢN PHẨM</h4>
+                  </a>
+                  <h6>$25.75</h6>
+                  
+  
+                </div>
+                  <button type="button" class="btn btn-outline-danger col-12">THÊM VÀO GIỎ HÀNG</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 ">
+            <div class="product-item btn-light">
+              <a href="detailProduct.html"><img src="user/assets/images/Products/giay2.jfif" style="width: 100%; height: 30vh ;"></a>
+              <div class="down-content" >
+                <div style="width: 100%; height: 10vh ;" >
+                  <a href="detailProduct.html">
+                    <h4>TÊN SẢN PHẨM</h4>
+                  </a>
+                  <h6>$25.75</h6>
+                  
+  
+                </div>
+                  <button type="button" class="btn btn-outline-danger col-12">THÊM VÀO GIỎ HÀNG</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <img src="user/assets/images/line.PNG" class="_2dRoLS" style="width: 100%; height: 70px;">
+        </div>
+      </div>
+    </div>
+  
+    
+  
+  
+    <div class="call-to-action">
+      <div class="container">
+        <div class="row" style="background-color: white;">
+          <div class="col-md-12">
+            <div class="best-features">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="section-heading">
+                     
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-10">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img class="d-block w-100" src="user/assets/images/thanks.PNG" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                          <img class="d-block w-100" src="https://i.pinimg.com/originals/75/76/45/75764503c7e040c091eeaba0ad075243.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                          <img class="d-block w-100" src="https://thumbs.dreamstime.com/b/abstract-fluid-color-background-summer-travel-sale-banner-colorful-shapes-wavy-geometric-modern-design-minimal-vector-wallpaper-145884397.jpg" alt="Third slide">
+                        </div>
+                      </div>
+                      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base.html}">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap}"
+          rel="stylesheet">
+    <link rel="stylesheet" th:href="@{../../usercssjs/assets/css/products.css}">
+    <link rel="stylesheet" th:href="@{../../usercssjs/assets/css/bookingSubPitch.css}">
+    <link th:href="@{http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css}" rel="stylesheet">
+    <script th:src="@{http://code.jquery.com/jquery-1.11.1.min.js}"></script>
+    <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css}" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js}"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<link th:href="@{https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap}" rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+      th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css}">
+<link rel="stylesheet" type="text/css"
+      th:href="@{https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css}">
+<link rel="stylesheet" type="text/css"
+      th:href="@{https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css}">
+
+<title>😈 Stone Devil</title>
+
+
+</head>
+
+<body>
+
+<div class="container" layout:fragment="content">
+
+    <div class="heading-section">
+        <!-- <h2>Product Details</h2> -->
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <div id="slider" class="owl-carousel product-slider">
+                <div class="item">
+                    <img src="https://wallpapercave.com/wp/wp2485452.jpg"/>
+                </div>
+                <div class="item">
+                    <img src="https://i.ytimg.com/vi/PJ_zomNMK_s/maxresdefault.jpg"/>
+                </div>
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw"/>
+                </div>
+                <div class="item">
+                    <img src="https://i.ytimg.com/vi/PJ_zomNMK_s/maxresdefault.jpg"/>
+                </div>
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw"/>
+                </div>
+                <div class="item">
+                    <img src="https://i.ytimg.com/vi/PJ_zomNMK_s/maxresdefault.jpg"/>
+                </div>
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw"/>
+                </div>
+            </div>
+            <div id="thumb" class="owl-carousel product-thumb">
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"/>
+                </div>
+                <div class="item">
+                    <img src="https://i.ytimg.com/vi/PJ_zomNMK_s/maxresdefault.jpg"/>
+                </div>
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw"/>
+                </div>
+                <div class="item">
+                    <img src="https://i.ytimg.com/vi/PJ_zomNMK_s/maxresdefault.jpg"/>
+                </div>
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw"/>
+                </div>
+                <div class="item">
+                    <img src="https://i.ytimg.com/vi/PJ_zomNMK_s/maxresdefault.jpg"/>
+                </div>
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw"/>
+                </div>
+            </div>
+            <br>
+            <hr>
+
+        </div>
+        <div class="card col-md-7 p-3">
+            <div class="product-dtl">
+                <div class="product-info">
+                    <div class="product-name">Sân bóng tuyên sơn(7 người)</div>
+                    <div class="inline">
+                        <p style="margin-bottom: 2px; float: left; margin-right: 5px;">Số 22 đường 2/9 – Quận Hải Châu –
+                            TP Đà Nẵng - </p>
+                        <a href="">SEE ON MAP</a>
+                    </div>
+
+                    <div class="product-price-discount">
+                        <span id="price" style="float: left;">40000</span>
+                        <span style="float: left;">đ</span>
+                        <span class="line-through">50000đ/h</span>
+                    </div>
+                </div>
+                <p>Sân bóng Tuyên Sơn Đà Nẵng nằm trong làng thể thao Tuyên Sơn. Là 1 trong những sân bóng đá mini tại
+                    Đà Nẵng. Sân Tuyên Sơn có nhược điểm là lưới bao sân rất kém, khiến cho bóng từ sân này qua sân
+                    khác, và phải thường xuyên chạy đi
+                    nhặt bóng do lưới chắn không tốt.</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h5>Chọn ngày</h5>
+                            <input type="date" class="form-control" name="" id="dateInput" aria-describedby="helpId"
+                                   placeholder="">
+                            <small id="helpId" class="form-text text-muted">ngày đặt sân</small>
+                        </div>
+                    </div>
+                    <div class="col-md-8 time ">
+                        <h5>Chọn giờ</h5>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <input type="time" class="form-control" id="timestart" onchange="timeFee()"
+                                       aria-describedby="helpId">
+                                <small id="helpId" class="form-text text-muted">giờ bắt đầu</small>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="time" class="form-control" id="timeend" onchange="timeFee()"
+                                       aria-describedby="helpId" placeholder="">
+                                <small id="helpId" class="form-text text-muted">giờ kết thúc</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="float:right; color: red;">đ</h3>
+                    <h3 id="hourFee" style="float:right; color: red;">0</h3>
+                    <h4>PHÍ ĐẶT SÂN:</h4>
+                </div>
+                <div class="list-hour">
+                    <label class="">Những giờ đã được đặt</label>
+                    <div class="row ml-1">
+                        <div class="col-sm-4 alert alert-success mr-1" style="width: 239px; text-align: center;"> 7:00
+                            AM - 8:00 AM
+                        </div>
+                        <div class="col-sm-4 alert alert-success mr-1" style="width: 239px; text-align: center;">20:00
+                            PM - 21:25 PM
+                        </div>
+                        <div class="col-sm-4 alert alert-success mr-1" style="width: 239px;  text-align: center;">11:00
+                            AM - 14:00 PM
+                        </div>
+                        <div class="col-sm-4 alert alert-success mr-1" style="width: 239px; text-align: center;">11:00
+                            AM - 14:00 PM
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <div class="service card p-2" style="width: 100%;">
+        <h3>DỊCH VỤ</h3>
+        <hr>
+        <h4>NƯỚC GIẢI KHÁT</h4>
+        <div class="drink">
+            <div class="row card-block p-4">
+                <div id="service" class="col-sm-2 card text-left p-3 m-2" style="height: 200px;">
+                    <img class="img  ml-4"
+                         src="https://cdn.tgdd.vn/Products/Images/3226/76519/bhx/nuoc-tang-luc-sting-dau-sleek-lon-330ml-2-700x467.jpg"
+                         alt="">
+                    <div class="card-body">
+                        <h5 class="card-title ">Sting dâu</h5>
+                        <h8 id="pri1" class=" float-left mr-1 center mt-1">10000</h8>
+                        <input id="qty1" type="number" style="width: 40px;" value="0" min="0"
+                               onchange="getFeeOneCard('pri1','qty1','tt1' )">
+                        <p id="tt1" class="tt" style="display: none">0</p>
+                    </div>
+                </div>
+                <div id="service" class=" col-sm-2 card text-left p-3 m-2" style="height: 200px;">
+                    <img class="img  ml-4"
+                         src="https://cdn.tgdd.vn/Products/Images/3226/91595/bhx/nuoc-tang-luc-sting-vang-lon-cao-330ml-1511201815591.jpg"
+                         alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Sting vàng</h5>
+                        <h8 id="pri2" class=" float-left mr-1 center mt-1">12000</h8>
+                        <input id="qty2" type="number" style="width: 40px;" value="0" min="0"
+                               onchange="getFeeOneCard('pri2','qty2','tt2' )">
+                        <p id="tt2" class="tt" style="display: none">0</p>
+                    </div>
+                </div>
+                <div id="service" class="col-sm-2 card text-left  p-3 m-2" style="height: 200px;">
+                    <img class="img ml-4" src="https://cf.shopee.vn/file/f6a87bd170eab0d27850ca866bcbc66e" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Coca</h5>
+                        <h8 id="pri3" class=" float-left mr-1 center mt-1">10000</h8>
+                        <input id="qty3" type="number" style="width: 40px;" value="0" min="0"
+                               onchange="getFeeOneCard('pri3','qty3','tt3' )">
+                        <p id="tt3" class="tt" style="display: none">0</p>
+                    </div>
+                </div>
+                <div id="service" class="col-sm-2 card text-left p-3 m-2" style="height: 200px">
+                    <img class="img  ml-4"
+                         src="https://cdn.tgdd.vn/Products/Images/2443/76467/bhx/nuoc-ngot-pepsi-cola-330ml-202008131510316142.JPG"
+                         alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Pesi</h5>
+                        <h8 id="pri4" class=" float-left mr-1 center mt-1">10000</h8>
+                        <input id="qty4" type="number" style="width: 40px;" value="0" min="0"
+                               onchange="getFeeOneCard('pri4','qty4','tt4' )">
+                        <p id="tt4" class="tt" style="display: none">0</p>
+                    </div>
+                </div>
+                <div id="service" class="col-sm-2 card text-left  p-3 m-2" style="height: 200px;">
+                    <img class="img  ml-4" src="https://vietmartjp.com/wp-content/uploads/2020/05/A-N0004-bo-huc.jpg"
+                         alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Redbull</h5>
+                        <h8 id="pri5" class=" float-left mr-1 center mt-1">15000</h8>
+                        <input id="qty5" type="number" style="width: 40px;" value="0" min="0"
+                               onchange="getFeeOneCard('pri5','qty5','tt5' )">
+                        <p id="tt5" class="tt" style="display: none">0</p>
+                    </div>
+                </div>
+                <div id="service" class="col-sm-2 card text-left  p-3 m-2" style="height: 200px;">
+                    <img class="img  ml-4" src="https://vietmartjp.com/wp-content/uploads/2020/05/A-N0004-bo-huc.jpg"
+                         alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Redbull</h5>
+                        <h8 id="pri6" class=" float-left mr-1 center mt-1">15000</h8>
+                        <input id="qty6" type="number" style="width: 40px;" value="0" min="0"
+                               onchange="getFeeOneCard('pri6','qty6','tt6' )">
+                        <p id="tt6" class="tt" style="display: none">0</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <h4>DỊCH VỤ CHO THUÊ</h4>
+            <div class="shirt">
+                <div class="row card-block p-4">
+                    <div class="card text-left p-3 mr-2" style="width: 208px;">
+                        <img class="img  ml-4" src="https://www.directsoccer.co.uk/upload/img/747x856/d4509-o-web.jpg"
+                             alt="">
+                        <div class="card-body">
+                            <h5 class="card-title ">Áo yếm thể thao</h5>
+                            <h8 id="pri7" class=" float-left mr-1 center mt-1">25000</h8>
+                            <input id="qty7" type="number" style="width: 40px;" value="0" min="0"
+                                   onchange="getFeeOneCard('pri7','qty7','tt7' )">
+                            <p id="tt7" class="tt" style="display: none">0</p>
+                        </div>
+                    </div>
+                    <div class="card text-left p-3 mr-2" style="width: 208px;">
+                        <img class="img  ml-4"
+                             src="https://media.istockphoto.com/photos/blue-sports-soccer-shoe-with-spikes-on-a-white-background-sports-picture-id1193037005"
+                             alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Giày đá bóng</h5>
+                            <h8 id="pri8" class=" float-left mr-1 center mt-1">10000</h8>
+                            <input id="qty8" type="number" style="width: 40px;" value="0" min="0"
+                                   onchange="getFeeOneCard('pri8','qty8','tt8' )">
+                            <p id="tt8" class="tt" style="display: none">0</p>
+                        </div>
+                    </div>
+                    <div class="card text-left p-3 mr-2" style="width: 208px;">
+                        <input type="checkbox">
+                        <img class="img  ml-4"
+                             src="https://www.sportbusinessmag.com/wp-content/uploads/2020/12/Epe5NxBXYAEiJi1.jpeg"
+                             alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Trọng tài</h5>
+                            <h8 class=" float-left mr-1 center mt-1">25000đ/h</h8>
+                            <!-- <input type="number" style="width: 40px;" value="0" min="0"> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- <h3 style="float:right; color: red;">100$</h3> -->
+                <h4 style="float: left; margin-right: 280px;">Phí dịch vụ: </h4>
+                <h4 id="totalAll" style="color: red;">0<span>đ</span></h4>
+            </div>
+        </div>
+        <div class="message card mt-4 p-3" style="width: 100%;">
+            <p>Ghi chú:</p>
+            <textarea cols="138" rows="5"></textarea>
+        </div>
+        <br>
+        <div class="payment ml-3">
+            <div>
+                <!-- <h3 style="float:right; color: red;">100$</h3> -->
+                <h4 style=" margin-right: 100px;margin-left: 0px;float: left;">Tổng cộng: </h4>
+                <h4 id="totalFinal" style="color: red;   ">0<span>đ</span></h4>
+            </div>
+            <div class="form-group">
+                <label style="font-weight: bold; margin-right: 420px; " for="">Trả trước</label>
+                <div class="row">
+                    <div class="pre-oder-fee col-sm-5">
+                        <input style=" clear: both;  width: 300px;" type="text" class="form-control" id="preOrder"
+                               aria-describedby="helpId" placeholder="Nhập số tiền bạn muốn trả trước">
+                        <small style="margin-right: 146px; clear: both; " id="helpId" class="form-text text-muted">Số
+                            tiền trả trước ít nhất phải bằng 30% tổng số tiền</small>
+                    </div>
+                    <div class="choose-payment col-sm-7">
+                        <div class="row">
+                            <div class="form-check col-sm-4 ">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                       id="flexRadioDefault1" onclick="thongbao()">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Chuyển khoản
+                                </label><br>
+                            </div>
+                            <div class="form-check col-sm-8">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                       id="flexRadioDefault2" checked onclick="thongbao1()">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Thanh toán bằng tiền mặt
+                                </label>
+                            </div>
+                        </div>
+                        <small id="thongbao"></small>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="csc">
+            <script>
+                $(document).ready(function() {
+                    var slider = $("#slider");
+                    var thumb = $("#thumb");
+                    var slidesPerPage = 4; //globaly define number of elements per page
+                    var syncedSecondary = true;
+                    slider.owlCarousel({
+                        items: 1,
+                        slideSpeed: 2000,
+                        nav: false,
+                        autoplay: false,
+                        dots: false,
+                        loop: true,
+                        responsiveRefreshRate: 200
+                    }).on('changed.owl.carousel', syncPosition);
+                    thumb
+                        .on('initialized.owl.carousel', function() {
+                            thumb.find(".owl-item").eq(0).addClass("current");
+                        })
+                        .owlCarousel({
+                            items: slidesPerPage,
+                            dots: false,
+                            nav: true,
+                            item: 4,
+                            smartSpeed: 200,
+                            slideSpeed: 500,
+                            slideBy: slidesPerPage,
+                            navText: ['<svg width="18px" height="18px" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>', '<svg width="25px" height="25px" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
+                            responsiveRefreshRate: 100
+                        }).on('changed.owl.carousel', syncPosition2);
+
+                    function syncPosition(el) {
+                        var count = el.item.count - 1;
+                        var current = Math.round(el.item.index - (el.item.count / 2) - .5);
+                        if (current < 0) {
+                            current = count;
+                        }
+                        if (current > count) {
+                            current = 0;
+                        }
+                        thumb
+                            .find(".owl-item")
+                            .removeClass("current")
+                            .eq(current)
+                            .addClass("current");
+                        var onscreen = thumb.find('.owl-item.active').length - 1;
+                        var start = thumb.find('.owl-item.active').first().index();
+                        var end = thumb.find('.owl-item.active').last().index();
+                        if (current > end) {
+                            thumb.data('owl.carousel').to(current, 100, true);
+                        }
+                        if (current < start) {
+                            thumb.data('owl.carousel').to(current - onscreen, 100, true);
+                        }
+                    }
+
+                    function syncPosition2(el) {
+                        if (syncedSecondary) {
+                            var number = el.item.index;
+                            slider.data('owl.carousel').to(number, 100, true);
+                        }
+                    }
+                    thumb.on("click", ".owl-item", function(e) {
+                        e.preventDefault();
+                        var number = $(this).index();
+                        slider.data('owl.carousel').to(number, 300, true);
+                    });
+                    $(".qtyminus").on("click", function() {
+                        var now = $(".qty").val();
+                        if ($.isNumeric(now)) {
+                            if (parseInt(now) - 1 > 0) {
+                                now--;
+                            }
+                            $(".qty").val(now);
+                        }
+                    })
+                    $(".qtyplus").on("click", function() {
+                        var now = $(".qty").val();
+                        if ($.isNumeric(now)) {
+                            $(".qty").val(parseInt(now) + 1);
+                        }
+                    });
+                });
+
+
+                // ----------------------------- JAVASCRIPT ------------------------------------
+                function thongbao() {
+                    document.getElementById("thongbao").innerHTML = "Vui lòng kiểm tra email và chuyển khoản theo thông tin chuyển khoản trong mail trước khi nhận sân 1 tiếng.";
+                }
+
+                function thongbao1() {
+                    document.getElementById("thongbao").innerHTML = "Vui lòng kiểm tra email và đến sân thanh toán tiền cọc trước khi nhận sân 1 tiếng.";
+
+                }
+
+                function getToday() {
+                    var today = new Date();
+                    var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+                    console.log(date);
+                    return date;
+                }
+
+                function timeFee() {
+                    var price = document.getElementById("price");
+                    var priceNum = parseInt(price.innerText, 10);
+                    console.log(priceNum);
+                    var st = document.getElementById("timestart").value;
+                    var e = document.getElementById("timeend").value;
+                    if (st === "" || e === "") {
+                        console.log("Not null");
+                    } else {
+                        console.log("Time is: ");
+                        // getTime();
+                        var t1 = new Date("October 15, 1996 " + st);
+                        var t2 = new Date("October 15, 1996 " + e);
+
+                        let t1_Hour = t1.getHours();
+                        let t2_Hour = t2.getHours();
+                        let t1_Mi = t1.getMinutes();
+                        let t2_Mi = t2.getMinutes();
+                        if (t2_Hour === 0) {
+                            t2_Hour = 24;
+                        }
+                        let fee = (((t2_Hour * 60) + t2_Mi) - ((t1_Hour * 60) + t1_Mi)) * (priceNum / 60);
+                        if (fee > 0) {
+                            document.getElementById("hourFee").innerHTML = Math.round(fee);
+                            setValueForElement(sumBy2Id('hourFee', 'totalAll'), 'totalFinal'); //Tong cong
+                            // setUpTable();
+                            return fee;
+                        }
+                    }
+                }
+
+                function setServiceFeeTotal() {
+                    var x, i, z, sum = 0,
+                        zText;
+                    x = document.querySelectorAll("p.tt");
+                    for (i = 0; i < x.length; i++) {
+                        zText = x[i].innerText;
+                        if (zText === '') {
+                            zText = '0';
+                        }
+                        z = parseInt(zText, 10);
+                        sum += z;
+                    }
+                    console.log(parseInt('', 0));
+                    console.log("sum:" + sum);
+                    document.getElementById("totalAll").innerHTML = sum;
+                    return sum;
+                }
+
+                function getFeeOneCard(price, quantity, tt) {
+                    var x = document.querySelectorAll(`h8#${price}`);
+                    var y = document.querySelectorAll(`input#${quantity}`);
+                    var xNum = parseInt(x[0].innerText, 10)
+                    var yNum = parseInt(y[0].value, 10);
+
+                    var totalOne = yNum * xNum;
+                    document.getElementById(`${tt}`).innerHTML = totalOne;
+                    setServiceFeeTotal();
+                    setValueForElement(sumBy2Id('hourFee', 'totalAll'), 'totalFinal'); //Tong cong
+                }
+
+                function totalAll() {
+                    var x, y;
+                    x = timeFee();
+                    y = calTotal();
+                    console.log(Math.round(x + y));
+                    document.getElementById("totalFinal").innerHTML = (x + y);
+                }
+
+                function sumBy2Id(id1, id2) {
+                    var x, y, sum;
+                    x = document.getElementById(id1).innerText;
+                    y = document.getElementById(id2).innerText;
+                    sum = parseInt(x, 10) + parseInt(y, 10);
+                    // console.log("Sum 2 id is: "+sum);
+                    // document.getElementById("totalFinal").innerHTML = sum;
+                    return sum;
+                }
+
+                function subBy2Id(id1, id2) {
+                    var x, y, sub;
+                    x = document.getElementById(id1).innerText;
+                    y = document.getElementById(id2).innerText;
+                    sub = parseInt(x, 10) - parseInt(y, 10);
+                    // console.log("Sum 2 id is: "+sub);
+                    // document.getElementById("totalFinal").innerHTML = sub;
+                    return sub;
+                }
+
+                function setValueForElement(value, id) {
+                    document.getElementById(id).innerHTML = value;
+                }
+
+                function setElementById(id1, id2) {
+                    document.getElementById(id1).innerHTML = document.getElementById(id2).innerText;
+                }
+
+                function setUpModal() {
+                    setValueForElement(getToday(), "createDateMd");
+                    if (document.getElementById("totalAll").innerText !== '0') {
+                        setUpServiceTable();
+                    }
+                    setElementById('serviceFee', 'totalAll'); //Phi dich vu
+                    setElementById('hourFeeMd', 'hourFee'); //Phi dat san (time)
+                    setElementById('totalAllMd', 'totalFinal'); //Tong cong
+                    // setValueForElement(sumBy2Id('hourFee','totalAll'),'totalFinal');
+                    setValueForElement(getTimeBooking(), "timeMd");
+                    setValueForElement(document.getElementById("dateInput").value, "dateMd");
+                    setPreOrderToModal(); //Dat truoc
+                    setValueForElement(subBy2Id('totalAllMd', 'preOrderMd'), 'postOrderMd'); //Phi con lai
+                }
+
+                function setUpServiceTable() {
+                    var name, price, quantity, total, i, sum;
+                    name = document.querySelectorAll("div.card-body > h5");
+                    price = document.querySelectorAll("div.card-body > h8");
+                    quantity = document.querySelectorAll("div.card-body > input");
+                    total = document.querySelectorAll("div.card-body > p");
+                    for (i = 0; i <= name.length; i++) {
+                        if (quantity[i].value != 0) {
+                            sum += '<tr><td>' + name[i].innerText + '</td>' +
+                                '<td style="text-align: center;>2</td>' +
+                                '<td style="text-align: center;>lon</td>' +
+                                '<td style="text-align: center;>4</td>' +
+                                '<td style="text-align: center;>' + price[i].innerText + '</td>' +
+                                '<td style="text-align: center;>6</td>' +
+                                '<td style="text-align: center;>' + quantity[i].value + '</td>' +
+                                '<td style="text-align: center;>8</td>' +
+                                '<td style="text-align: center;>' + total[i].innerText + '</td>' +
+                                '</tr>';
+                            console.log("sum: " + sum.slice(9));
+                            // document.getElementById("serviceTable").innerHTML += sum;
+                        }
+                        if (i == (name.length - 2)) {
+                            // alert("break");
+                            break;
+                        } else {
+                            // console.log("null");
+                            continue;
+                        }
+                    }
+                    document.getElementById("serviceTable").innerHTML = sum.slice(9);
+                    // setUpTable();
+                }
+
+                function reset() {
+                    document.getElementById("serviceTable").innerHTML = "";
+                }
+
+                function setPreOrderToModal() {
+                    document.getElementById("preOrderMd").innerHTML = document.getElementById("preOrder").value;
+                }
+
+                function getTimeBooking() {
+                    var st = document.getElementById("timestart").value;
+                    var e = document.getElementById("timeend").value;
+                    // if (st.getHours()>0 && st.getHours()<13) {
+                    // 	st+='AM';
+                    // }else{
+                    // 	st+='PM';
+                    // }
+                    // if (e.getHours()>0 && e.getHours()<13) {
+                    // 	e+='AM';
+                    // }else{
+                    // 	e+='PM';
+                    // }
+                    var str = st + ' -- ' + e;
+                    console.log("time: " + str);
+                    // document.getElementById("timeMd").innerHTML=str;
+                    return str;
+                }
+            </script>
+            <button type="button" class="btn btn-danger float-right mt-3" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" onclick="setUpModal()">
+                Tiến hành đặt sân
+            </button>
+        </div>
+        <br><br>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+         style="padding-top: 70px;">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 600px;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hóa đơn</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="m-2" style="height: 24px;">
+                    <h6 style="float: left; margin-top: 1px; margin-left: 8px;">Ngày tạo:&#160;</h6>
+                    <p id="createDateMd" style="margin-bottom: 0px;"></p>
+                </div>
+
+                <div class="modal-body" style="height: auto; padding-top: 1px;">
+                    <div class="row">
+                        <div style="width: 210px;" class="col-sm-5 ">
+                            <h6>Thông tin khách hàng</h6>
+                            <div>
+                                <div>
+                                    <p class="mb-0">Nguyễn Đình Vĩ</p>
+                                    <p>+84936735043</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 375px;" class="col-sm-7">
+                            <h6 style="float: right;">Thông tin sân</h6>
+                            <div>
+                                <div>
+                                    <p style=" clear: both; float: right;" class="mb-0">Sân bóng tuyên sơn(7 người)</p>
+                                    <p style=" clear: both; float: right;">Số 22 đường 2/9 – Quận Hải Châu – TP Đà Nẵng</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h6>Giờ đặt</h6>
+                    <div class="card p-2 " style="height: 45px;">
+                        <div class="totalmd">
+                            <p id="hourFeeMd" style="float: right; margin-right: 26px;">300.000đ</p>
+                            <p style="float: right; margin-right: 58px; font-weight: bold;">Phí đặt sân: </p>
+                            <div class="row">
+                                <p id="timeMd" style="width: 130px;" class="col-sm-5 pr-0"></p>
+                                <p class="col-sm-1">/</p>
+                                <p id="dateMd" class="col-sm-5">28/06/2021</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h6>Dịch vụ</h6>
+                    <div class="card">
+                        <table class="table mb-0">
+                            <thead>
+                            <tr>
+                                <th>Tên</th>
+                                <th style="text-align: center;">Đơn vị</th>
+                                <th style="text-align: center;">Giá</th>
+                                <th style="text-align: center;">Số lượng</th>
+                                <th style="text-align: center;">Thành tiền</th>
+                            </tr>
+                            </thead>
+                            <tbody id="serviceTable">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="totalmd">
+                        <p class="col-4" style="float: left; font-weight: bold;">Phí dịch vụ:</p>
+                        <p class="col-7" id="serviceFee" style="float: left; margin-right: 35px;">330.000đ</p>
+                    </div>
+
+                    <div class="pre mt-2" style="clear: both;">
+                        <p class="col-4" style="float: left; font-weight: bold;">Tổng cộng: </p>
+                        <p class="col-7" id="totalAllMd" style="float: left;  margin-right: 35px;">750.000đ</p>
+
+                    </div>
+                    <div class="pre mt-2" style="clear: both;">
+                        <p class="col-4" style="float: left; font-weight: bold;">Đặt trước: </p>
+                        <p class="col-7" id="preOrderMd" style="float: left; margin-right: 35px;">290.000đ</p>
+                    </div>
+                    <div class="pre mt-2" style="clear: both;">
+                        <p class="col-4" style="float: left; font-weight: bold;">Hình thức: </p>
+                        <p class="col-7" id="preOrderMd" style="float: left; margin-right: 35px;">Chuyển khoản</p>
+
+                    </div>
+                    <div class="pre" style="clear: both;">
+                        <hr>
+                        <p class="col-4" style="float: left; font-weight: bold;">Phí còn lại: </p>
+                        <p class="col-7" id="postOrderMd" style="float: left; margin-right: 36px; color: red;">340.000đ</p>
+
+                    </div>
+                    <div style="clear: both;">
+                        <h6>Ghi chú: nothing here.</h6>
+                        <!-- <h6 class="col-sm-10">ádasdsd</h6> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="reset()">Hủy
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Xác nhận</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(()=>{
+            $("#home-active").removeClass("active");
+            $("#pitch-active").addClass("active");
+        })
+    </script>
+</div>
+
+
+
+</body>
+
+
+</html>

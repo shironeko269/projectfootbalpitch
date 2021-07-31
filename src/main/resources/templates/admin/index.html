@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/base.html}">
+<head>
+    <title>Trang Chủ</title>
+</head>
+
+<body class="theme-red">
+
+    <section class="content" layout:fragment="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>Hệ Thống Quản Lí Sân Bóng Và Bán Phụ Kiện Thể Thao</h2> 
+            </div>
+            
+            <!-- Widgets -->
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-pink hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">attach_money</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">Tổng doanh thu</div>
+                            <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-cyan hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons"><i class="fas fa-tshirt"></i></i>
+                        </div>
+                        <div class="content">
+                            <div class="text">Tổng mặt hàng đang bán</div>
+                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-light-green hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons"><i class="far fa-futbol"></i></i>
+                        </div>
+                        <div class="content">
+                            <div class="text">Tổng Sân Bóng</div>
+                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-orange hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">person_add</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">Số lượng người dùng</div>
+                            <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Widgets -->
+            <!-- CPU Usage -->
+            <!-- <div class="row clearfix">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="header">
+                            <div class="row clearfix">
+                                <div class="col-xs-12 col-sm-6">
+                                    <h2>CPU USAGE (%)</h2>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 align-right">
+                                    <div class="switch panel-switch-btn">
+                                        <span class="m-r-10 font-12">REAL TIME</span>
+                                        <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div id="real_time_chart" class="dashboard-flot-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- #END# CPU Usage -->
+            <div class="row clearfix">
+                <!-- Line Chart -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Số tiền thu được từ sản phẩm theo tuần</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="sparkline" data-type="line" data-spot-Radius="3" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#222"
+                                 data-min-Spot-Color="rgb(233, 30, 99)" data-max-Spot-Color="rgb(0, 150, 136)" data-spot-Color="rgb(0, 188, 212)"
+                                 data-offset="90" data-width="100%" data-height="150px" data-line-Width="2" data-line-Color="rgb(0, 188, 212)"
+                                 data-fill-Color="rgba(0, 188, 212, 0.3)">
+                                6,4,7,8,4,3,2,2,5,6,7,4,1,5,7,9,9,8,7,6
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Line Chart -->
+                <!-- Bar Chart -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Số tiền thu được từ dịch vụ theo tuần</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="sparkline" data-type="bar" data-width="97%" data-height="150px" data-bar-Width="16" data-bar-Spacing="7" data-bar-Color="rgb(0, 188, 212)">
+                                6,7,8,9,10,5,13,18,21,7,9,11,12,5
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Bar Chart -->
+                <!-- Pie Chart -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Số tiền thu được từ sân bóng theo tuần</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body align-center">
+                            <div class="sparkline-pie">6,4,8</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Pie Chart -->
+            </div>  
+            <div class="row clearfix">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="card">
+                        <div class="body">
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#pitch" aria-controls="home" role="tab" data-toggle="tab">Danh sách sân bóng được thuê nhiều nhất</a></li>
+                                    <li role="presentation"><a href="#hour" aria-controls="settings" role="tab" data-toggle="tab">Danh sách giờ được thuê nhiều nhất</a></li>
+                                    <li role="presentation"><a href="#customer" aria-controls="settings" role="tab" data-toggle="tab">Danh sách khách thuê nhiều nhất</a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="pitch">
+                                        <div class="panel panel-default panel-post">
+                                            <div class="panel-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover dashboard-task-infos">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>STT</th>
+                                                                <th>Tên sân</th>
+                                                                <th>Địa chỉ</th>
+                                                                <th>Nhân viên</th>
+                                                                <th>Đơn đặt</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>Sân A</td>
+                                                                <td>132 Nguyen Van Linh</td>
+                                                                <td>John Doe</td>
+                                                                <td>
+                                                                    12 Đơn/ngày
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>Sân A</td>
+                                                                <td>132 Nguyen Van Linh</td>
+                                                                <td>John Doe</td>
+                                                                <td>
+                                                                    12 Đơn/ngày
+                                                                </td>
+                                                            </tr><tr>
+                                                                <td>1</td>
+                                                                <td>Sân A</td>
+                                                                <td>132 Nguyen Van Linh</td>
+                                                                <td>John Doe</td>
+                                                                <td>
+                                                                    12 Đơn/ngày
+                                                                </td>
+                                                            </tr><tr>
+                                                                <td>1</td>
+                                                                <td>Sân A</td>
+                                                                <td>132 Nguyen Van Linh</td>
+                                                                <td>John Doe</td>
+                                                                <td>
+                                                                    12 Đơn/ngày
+                                                                </td>
+                                                            </tr><tr>
+                                                                <td>1</td>
+                                                                <td>Sân A</td>
+                                                                <td>132 Nguyen Van Linh</td>
+                                                                <td>John Doe</td>
+                                                                <td>
+                                                                    12 Đơn/ngày
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade in" id="hour">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover dashboard-task-infos">
+                                                <thead>
+                                                    <tr>
+                                                        <th>STT</th>
+                                                        <th>Tên sân</th>
+                                                        <th>Địa chỉ</th>
+                                                        <th>Giờ</th>
+                                                        <th>Đơn đặt</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Sân A</td>
+                                                        <td>132 Nguyen Van Linh</td>
+                                                        <td>19:00</td>
+                                                        <td>
+                                                            12 Đơn/ngày
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Sân A</td>
+                                                        <td>132 Nguyen Van Linh</td>
+                                                        <td>19:00</td>
+                                                        <td>
+                                                            12 Đơn/ngày
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade in" id="customer">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover dashboard-task-infos">
+                                                <thead>
+                                                    <tr>
+                                                        <th>STT</th>
+                                                        <th>Tên đăng nhập</th>
+                                                        <th>Gmail</th>
+                                                        <th>Số điện thoại</th>
+                                                        <th>Số lần quay lại</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Nguyễn Văn A</td>
+                                                        <td>a@gmail.com</td>
+                                                        <td>0123456789</td>
+                                                        <td>
+                                                            50 lần
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Nguyễn Văn A</td>
+                                                        <td>a@gmail.com</td>
+                                                        <td>0123456789</td>
+                                                        <td>
+                                                            50 lần
+                                                        </td>
+                                                    </tr><tr>
+                                                        <td>1</td>
+                                                        <td>Nguyễn Văn A</td>
+                                                        <td>a@gmail.com</td>
+                                                        <td>0123456789</td>
+                                                        <td>
+                                                            50 lần
+                                                        </td>
+                                                    </tr><tr>
+                                                        <td>1</td>
+                                                        <td>Nguyễn Văn A</td>
+                                                        <td>a@gmail.com</td>
+                                                        <td>0123456789</td>
+                                                        <td>
+                                                            50 lần
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

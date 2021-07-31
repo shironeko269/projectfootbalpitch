@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/base.html}">
+
+<head>
+    <title>Chi Tiết Đơn Hàng</title>
+
+    <!-- Colorpicker Css -->
+    <link th:href="@{../../plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css}" rel="stylesheet" />
+
+    <!-- Dropzone Css -->
+    <link th:href="@{../../plugins/dropzone/dropzone.css}" rel="stylesheet">
+
+    <!-- Multi Select Css -->
+    <link th:href="@{../../plugins/multi-select/css/multi-select.css}" rel="stylesheet">
+
+    <!-- Bootstrap Spinner Css -->
+    <link th:href="@{../../plugins/jquery-spinner/css/bootstrap-spinner.css}" rel="stylesheet">
+
+    <!-- Bootstrap Tagsinput Css -->
+    <link th:href="@{../../plugins/bootstrap-tagsinput/bootstrap-tagsinput.css}" rel="stylesheet">
+
+    <!-- Bootstrap Select Css -->
+    <link th:href="@{../../plugins/bootstrap-select/css/bootstrap-select.css}" rel="stylesheet" />
+
+    <!-- noUISlider Css -->
+    <link th:href="@{../../plugins/nouislider/nouislider.min.css}" rel="stylesheet" />
+    <script>
+        $(document).ready(()=>{
+            $("#order-product").addClass("active");
+            $("#list-order-product").addClass("active");
+        })
+    </script>
+</head>
+
+<body class="theme-red">
+
+    <section class="content" layout:fragment="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>Hệ Thống Quản Lí Sân Bóng Và Bán Phụ Kiện Thể Thao</h2>
+            </div>
+            <!-- Advanced Select -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                               Thông tin chi tiết đơn hàng 1
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2>Đơn Hàng 1</h2>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                Người nhận:
+                                            </div>
+                                            <div class="col-md-6">
+                                                Người đặt:
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                Số điện thoại:
+                                            </div>
+                                            <div class="col-md-6">
+                                                Địa chỉ:
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                Trạng thái đơn hàng:
+                                            </div>
+                                            <div class="col-md-6">
+                                                Ghi chú:
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                Phương thức thanh toán:
+                                            </div>
+                                            <div class="col-md-6">
+                                                Tổng giá tiền:
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h2>Chi tiết đơn hàng 1</h2>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                Sản phẩm:Áo
+                                            </div>
+                                            <div class="col-md-3">
+                                                Số lượng:12 cái
+                                            </div>
+                                            <div class="col-md-3">
+                                                Giảm giá:12%
+                                            </div>
+                                            <div class="col-md-3">
+                                                Giá:12 VND
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                Sản phẩm:Áo
+                                            </div>
+                                            <div class="col-md-3">
+                                                Số lượng:12 cái
+                                            </div>
+                                            <div class="col-md-3">
+                                                Giảm giá:12%
+                                            </div>
+                                            <div class="col-md-3">
+                                                Giá:12 VND
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                Sản phẩm:Áo
+                                            </div>
+                                            <div class="col-md-3">
+                                                Số lượng:12 cái
+                                            </div>
+                                            <div class="col-md-3">
+                                                Giảm giá:12%
+                                            </div>
+                                            <div class="col-md-3">
+                                                Giá:12 VND
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>Tổng giá tiền : 120 VND</h4>
+                                <button class="btn btn-primary">Trở lại</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function chooseFile(fileInput) {
+            if (fileInput.files && fileInput.files[0]){
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#image').attr('src',e.target.result);
+                }
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>😈 Stone Devil</title>
+    <link th:href="@{/usercssjs/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/usercssjs/vendor/bootstrap/css/bootstrap.search.css}" rel="stylesheet">
+    <!-- Font Icon -->
+    <link rel="stylesheet" th:href="@{usercssjs/fonts/material-icon/css/material-design-iconic-font.min.css}">
+    <link rel="stylesheet" th:href="@{usercssjs/assets/fonts/material-icon/css/material-design-iconic-font.min.css}">
+
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
+
+
+    <!-- Main css -->
+    <link rel="stylesheet" th:href="@{usercssjs/assets/css/style.css}">
+</head>
+<body>
+
+    <div class="main">
+
+        
+
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="../../usercssjs/assets/images/StoneDevil.jpg" alt="sing up image"></figure>
+                        <a href="#" th:href="@{/register}" class="signup-image-link">TẠO TÀI KHOẢN MỚI</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <img src="../../usercssjs/assets/images/DANGNHAP.PNG" alt="">
+                        <div th:if="${param.error}" class="alert alert-danger">
+                            Invalid username or password
+                        </div>
+                        <div th:if="${param.logout}" class="alert alert-danger">
+                            You have been logged out
+                        </div>
+                        <div th:if="${param.change}" class="alert alert-success">
+                            <p th:text="${param.change}"></p>
+                        </div>
+                        <form method="POST" class="register-form" id="login-form" th:action="@{/dologin}">
+                            <div class="form-group">
+                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username" id="your_name" placeholder="NHẬP TÊN BẠN"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="your_pass" placeholder="NHẬP MẬT KHẢU"/>
+                            </div>
+<!--                            <div class="form-group">-->
+<!--                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />-->
+<!--                                <label for="remember-me" class="label-agree-term"><span><span></span></span>GHI NHỚ ĐIỀU NÀY</label>-->
+<!--                            </div>-->
+                            <div class="form-group form-button">
+                                    <input type="submit" name="signin" id="signin" class="form-submit" value="ĐĂNG NHẬP"/>
+                            </div>
+                        </form>
+                        <div class="social-login">
+                            <span class="social-label">HOẶC ĐĂNG NHẬP VỚI</span>
+                            <ul class="socials">
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- JS -->
+    <script th:src="@{user/vendor/jquery/jquery.min1.js}"></script>
+    <script th:src="@{user/assets/js/main.js}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

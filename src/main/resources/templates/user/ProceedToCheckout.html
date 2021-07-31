@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base.html}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet" />
+
+        <title>😈 Stone Devil</title>
+
+</head>
+
+<body>
+
+    <div class="section mt-5" layout:fragment="content">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+
+                <div class="col-md-7">
+                    <!-- Billing Details -->
+                    <div class="billing-details">
+                        <div class="section-title">
+                            <h3 class="title">ĐỊA CHỈ ĐƠN HÀNG</h3>
+                        </div>
+                        
+                                <div class="card-body card-block">
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">
+                                                Họ và tên</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" class="form-control" value="Nguyễn Quang Hùng">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">
+                                                Email</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" class="form-control" value="hungnqde140016@gmail.com">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">
+                                                Địa chỉ</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" class="form-control" value="Đà Nẵng">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">
+                                                Số ĐT </label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" class="form-control" value="0935119180">
+                                        </div>
+                                    </div>
+
+                                    
+
+
+                                </div>
+
+                                <div>
+                                    <a href="/user/address" target="_blank"> Bấm vào đây để thay đổi thông tin địa chỉ của bạn </a>
+
+                                </div>
+
+
+                        
+                    </div>
+                    <!-- /Billing Details -->
+                </div>
+
+                <!-- Order Details -->
+                <div class="col-md-5 order-details">
+                    <div class="section-title text-center">
+                        <h3 class="title">ĐƠN ĐẶT HÀNG </h3>
+                    </div>
+                    <div class="order-summary">
+                        <div class="order-col">
+                            <div>
+                                <strong>TÊN SẢN PHẨM</strong>
+                            </div>
+                            <div>
+                                <strong>TỔNG TIỀN</strong>
+                            </div>
+                        </div>
+                                <div class="order-products">
+                                    <div class="order-col">
+                                        <div>
+                                            Áo
+                                        </div>
+                                        <div>
+                                            1000$
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="order-products">
+                                    <div class="order-col">
+                                        <div>
+                                            Giày
+                                        </div>
+                                        <div>
+                                            2000$
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    <div class="order-col">
+                                        <div>Shiping</div>
+                                        <div>
+                                            <strong>Miễn phí</strong>
+                                        </div>
+                                    </div>
+                                    <div class="order-col">
+                                        <div>
+                                            <strong>THÀNH TIỀN</strong>
+                                        </div>
+
+
+                                        <div>
+                                            <strong class="order-total">3000$</strong>
+                                        </div>
+
+                                    </div>
+                    </div>
+
+                    <div>
+                        <h5 id="error" style='color: #f45858' )></h5>
+                    </div>
+
+                    <div style="width: 85%; text-align: center; display: flex; justify-content: space-between;">
+                        <form action="cart.html" method="" onsubmit="">
+
+                            <button class="btn btn-danger order-submit" type="submit" style="margin-left: 20%; width: 100%">QUAY LẠI GIỎ HÀNG</button>
+    
+                        </form>
+    
+                        <form action="" method="" onsubmit="">
+    
+                            <button class="btn btn-danger order-submit" type="submit" style="margin-left: 25%; width: 100%">TIẾN HÀNH ĐẶT HÀNG </button>
+    
+                        </form>
+                    </div>
+
+                    
+
+
+
+                </div>
+
+                <!-- /Order Details -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+        <script language="text/Javascript">
+            cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+            function clearField(t) {
+                //declaring the array outside of the
+                if (!cleared[t.id]) {
+                    // function makes it static and global
+                    cleared[t.id] = 1; // you could use true and false, but that's more typing
+                    t.value = ""; // with more chance of typos
+                    t.style.color = "#fff";
+                }
+            }
+        </script>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

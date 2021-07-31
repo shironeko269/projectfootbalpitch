@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/base.html}">
+
+<head>
+    <title>Profile Pitch</title>
+    <script>
+        $(document).ready(()=>{
+            $("#pitch").addClass("active");
+            $("#add-new-pitch").addClass("active");
+        })
+    </script>
+</head>
+
+<body class="theme-red">
+
+    <section class="content" layout:fragment="content">
+        <div class="container-fluid">
+            <div class="row clearfix"style="position: relative;">
+                <div class="col-xs-12 col-sm-3">
+                    <div class="card profile-card" style="position: fixed; width: 270px;">
+                        <div class="profile-header">&nbsp;</div>
+                        <div class="profile-body">
+                            <div class="image-area">
+                                <img src="../../images/user-lg.jpg" alt="AdminBSB - Profile Image" />
+                            </div>
+                            <div class="content-area">
+                                <h3>Marc K. Hammond</h3>
+                                <p>Nhân viên</p>
+                            </div>
+                        </div>
+                        <div class="profile-footer">
+                            <ul>
+                                <li>
+                                    <span>Ngày sinh</span>
+                                    <span>14/1/2000</span>
+                                </li>
+                                <li>
+                                    <span>Giới tính</span>
+                                    <span>Nam</span>
+                                </li>
+                                <li>
+                                    <span>Số điện thoại</span>
+                                    <span>123456789</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+<!-- 
+                    <div class="card card-about-me">
+                        <div class="header">
+                            <h2>ABOUT ME</h2>
+                        </div>
+                        <div class="body">
+                            <ul>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">library_books</i>
+                                        Education
+                                    </div>
+                                    <div class="content">
+                                        B.S. in Computer Science from the University of Tennessee at Knoxville
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">location_on</i>
+                                        Location
+                                    </div>
+                                    <div class="content">
+                                        Malibu, California
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">edit</i>
+                                        Skills
+                                    </div>
+                                    <div class="content">
+                                        <span class="label bg-red">UI Design</span>
+                                        <span class="label bg-teal">JavaScript</span>
+                                        <span class="label bg-blue">PHP</span>
+                                        <span class="label bg-amber">Node.js</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <i class="material-icons">notes</i>
+                                        Description
+                                    </div>
+                                    <div class="content">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <div class="card">
+                        <div class="body ">
+                            <div>
+                                <div >
+                                    <h2 style="text-align: center;">Thông tin sân bóng</h2>
+                                </div>
+
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                        <div class="panel panel-default panel-post">
+                                            <div class="col-sm-12 col-md-12">
+                                                <div class="thumbnail">
+                                                    <img src="http://placehold.it/500x300">
+                                                    <div class="caption">
+                                                        <h3 class="" style="text-align: center;font-size: larger;">Sân Tuyên Sơn</h3>
+                                                        <p style="color:black">
+                                                            Cung thể thao Tiên Sơn (còn được biết đến là Cung thể thao Tuyên Sơn hay Nhà thi đấu Thể dục Thể thao Đà Nẵng) là một nhà thi đấu đặt tại quận Hải Châu, thành phố Đà Nẵng, Việt Nam. 
+                                                            Công trình được xây dựng từ 14 tháng 7 năm 2009 với kinh phí 42 triệu USD. Nó được khánh thành vào 25 tháng 12 
+                                                            năm 2010 để phục vụ Đại hội Thể dục Thể thao toàn quốc lần VI tại Đà Nẵng. Cung có sức chứa 6.500 chỗ ngồi và có
+                                                             thể mở rộng lên tối đa 7.200 chỗ ngồi. Cung được cải tạo với kinh phí 80 tỷ đồng từ tháng 11 năm 2016 tới tháng 
+                                                             7 năm 2017 để phục vụ cho các sự kiện của APEC Việt Nam 2017.[2]
+                                                        </p>
+                                                        <div><b >Address</b> : <span>123 Nguyen Van Linh Quan hai Chau Thanh Pho Da Nang</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div >
+                                <h2 style="text-align: center;">Danh sách sân nhỏ</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <h3>Sân số 1</h3>
+                                            <p>
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                                text ever since the 1500s
+                                            </p>
+                                            <h3><span class="label label-info">Loại sân 5 người</span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <h3>Sân số 1</h3>
+                                            <p>
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                                text ever since the 1500s
+                                            </p>
+                                            <h3><span class="label label-info">Loại sân 5 người</span></h3>
+                                        </div>
+                                    </div>
+                                </div><div class="col-sm-6 col-md-3">
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <h3>Sân số 1</h3>
+                                            <p>
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                                text ever since the 1500s
+                                            </p>
+                                            <h3><span class="label label-info">Loại sân 5 người</span></h3>
+                                        </div>
+                                    </div>
+                                </div><div class="col-sm-6 col-md-3">
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <h3>Sân số 1</h3>
+                                            <p>
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                                text ever since the 1500s
+                                            </p>
+                                            <h3><span class="label label-info">Loại sân 5 người</span></h3>
+                                        </div>
+                                    </div>
+                                </div><div class="col-sm-6 col-md-3">
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <h3>Sân số 1</h3>
+                                            <p>
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                                text ever since the 1500s
+                                            </p>
+                                            <h3><span class="label label-info">Loại sân 5 người</span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+</body>
+
+</html>

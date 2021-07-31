@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>😈 Stone Devil</title>
+    <link th:href="@{/usercssjs/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/usercssjs/vendor/bootstrap/css/bootstrap.search.css}" rel="stylesheet">
+    <!-- Font Icon -->
+    <link rel="stylesheet" th:href="@{../../usercssjs/fonts/material-icon/css/material-design-iconic-font.min.css}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" th:href="@{../../usercssjs/assets/css/style.css}">
+    <!-- Jquery Core Js -->
+    <script th:src="@{../../plugins/jquery/jquery.min.js}"></script>
+</head>
+<body>
+
+<div class="main" style="background-color: whitesmoke;">
+
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-image">
+                    <img src="usercssjs/assets/images/StoneDevil.jpg" alt="">
+                    <a href="#" th:href="@{/sign-in}" class="signup-image-link">TÔI ĐÃ LÀ THÀNH VIÊN</a>
+                </div>
+                <div class="signup-form">
+                    <img src="assets/images/da" alt="">
+                    <figure><img src="usercssjs/assets/images/ĐANGKI.PNG" alt="sing up image"></figure>
+                    <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+                        <p class="text-center" th:text="${session.message.content}"></p>
+                        <th:block th:text="${#session.removeAttribute('message')}" ></th:block>
+                    </div>
+                    <form action="#"  class="register-form" id="register-form"
+                          th:action="@{/add-register}" th:object="${objUser}" method="post" enctype="multipart/form-data">
+
+                        <div class="form-group" style="margin-bottom: 0px;">
+                            <label for="username"><i class="zmdi  material-icons-name"></i></label>
+                            <input type="text" th:field="*{userName}" name="username"
+                                   id="username" placeholder="NHẬP TÊN CỦA BẠN"/>
+                            <div class="alert alert-danger d-block" th:each="e : ${#fields.errors('userName')} " th:text="${e}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"><i class="zmdi "></i></label>
+                            <input type="password" th:field="*{password}" name="password"
+                                   id="password" placeholder="NHẬP MẬT KHẨU" />
+                            <div class="alert alert-danger d-block" th:each="e : ${#fields.errors('password')} " th:text="${e}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi material-icons-name"></i></label>
+                            <input type="text" th:field="*{fullName}" name="fullName" id="fullName" placeholder="NHẬP TÊN ĐẦY ĐỦ CỦA BẠN" />
+                            <div class="alert alert-danger d-block" th:each="e : ${#fields.errors('fullName')} " th:text="${e}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"><i class="zmdi material-icons-name"></i></label>
+                            <input type="text" th:field="*{phone}" name="phone" id="phone" placeholder="NHẬP SỐ ĐIỆN THOẠI CỦA BẠN" />
+                            <div class="alert alert-danger d-block" th:each="e : ${#fields.errors('phone')} " th:text="${e}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi material-icons-name"></i></label>
+                            <input type="email" th:field="*{gmail}" name="email" id="email" placeholder="NHẬP EMAIL CỦA BẠN" />
+                            <div class="alert alert-danger d-block" th:each="e : ${#fields.errors('gmail')} " th:text="${e}">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="address"><i class="zmdi material-icons-name"></i></label>
+                            <input type="text" th:field="*{address}" name="address" id="address" placeholder="NHẬP ĐỊA CHỈ CỦA BẠN" />
+                            <div class="alert alert-danger d-block" th:each="e : ${#fields.errors('address')} " th:text="${e}">
+                            </div>
+                        </div>
+
+                        <script>
+                            function chooseFile(fileInput) {
+                                if (fileInput.files && fileInput.files[0]){
+                                    var reader = new FileReader();
+                                    reader.onload = function (e) {
+                                        $('#image').attr('src',e.target.result);
+                                    }
+                                    reader.readAsDataURL(fileInput.files[0]);
+                                }
+                            }
+                        </script>
+
+                        <div class="form-group" style="margin-bottom: 0px;">
+                            <div class="ml-2 col-sm-12">
+                                <input onchange="chooseFile(this);" type="file" name="profileImage" class="file">
+                            </div>
+                            <div class="ml-2 col-sm-6">
+                                <img    id="image"
+                                        src="http://placehold.it/500x300"
+                                        class="img-responsive"
+                                        alt=""
+                                >
+                            </div>
+                        </div>
+
+
+
+<!--                        <div class="form-group">-->
+<!--                            <label for="re-pass"><i class="zmdi "></i></label>-->
+<!--                            <input type="password" name="re_pass" id="re_pass" placeholder="NHẬP LẠI MẬT KHẨU" required/>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required/>-->
+<!--                            <label for="agree-term" class="label-agree-term"><span><span></span></span>TÔI ĐỒNG Ý VỚI TẤT CẢ <a href="#" class="term-service">CÁC ĐIỀU KHOẢN</a></label>-->
+<!--                        </div>-->
+                        <div class="form-group form-button">
+                            <button type="submit" id="signup" class="form-submit"> ĐĂNG KÍ</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
+
+    <!-- JS -->
+    <script th:src="@{../../user/vendor/jquery/jquery.min1.js}"></script>
+    <script th:src="@{../../user/assets/js/main.js}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
