@@ -1,4 +1,4 @@
-// Đối tượng Validator
+// Đối tượng `Validator`
 function Validator(options) {
     function getParent(element, selector) {
         while (element.parentElement) {
@@ -165,7 +165,6 @@ Validator.minLength = function (selector, min, message) {
         }
     };
 }
-
 Validator.maxLength = function (selector, max, message) {
     return {
         selector: selector,
@@ -174,54 +173,125 @@ Validator.maxLength = function (selector, max, message) {
         }
     };
 }
-
+Validator.isBlank = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            if (value.indexOf(' ') >= 0) {
+                return value ? message || 'Vui lòng nhập trường này' : undefined
+            }
+        }
+    };
+}
+Validator.isNotCharacterSpecial = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /^[a-zA-Z0-9&._-]+$/;
+            return regex.test(value) ? undefined :  message || 'Không được nhập kí tự đặt biệt';
+        }
+    };
+}
+Validator.isCharacterSpecial = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /^[-@.\/#&+\w\s]*$/;
+            return regex.test(value) ? undefined :  message ;
+        }
+    };
+}
+Validator.isCutManyBlankByFullName = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /^[\p{L}'\-\.]+( [\p{L}'\-\.]+)*$/u;
+            return regex.test(value) ? undefined :  message ||
+                'Chỉ 1 khoảng trắng cách nhau bởi 2 kí tự,Cuối và đầu chuỗi không có khoảng cách!';
+        }
+    };
+}
+Validator.isCutManyBlankByAddress = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /^(?=.*[a-z|A-Z].{4,})[\p{L}'\-\.0-9]+( [\p{L}'\-\.0-9]+)*$/u;
+            return regex.test(value) ? undefined :  message ||
+                'Chỉ 1 khoảng trắng cách nhau bởi 2 kí tự,Cuối và đầu chuỗi không có khoảng cách,Phải có ít nhất 5 chữ cái!';
+        }
+    };
+}
+Validator.isCutManyBlankByProduct = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /^(?=.*[a-z|A-Z].{1,})[\p{L}'\-\.0-9]+( [\p{L}'\-\.0-9]+)*$/u;
+            return regex.test(value) ? undefined :  message ||
+                'Chỉ 1 khoảng trắng cách nhau bởi 2 kí tự,Cuối và đầu chuỗi không có khoảng cách,Phải có ít nhất 2 chữ cái!';
+        }
+    };
+}
+Validator.isCutManyBlankByDescription = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /^(?=.*[a-z|A-Z].{5,})[\p{L}'\-\.0-9-@!#$%^&*?<>,;'/\-_.\/#&+\w\s]+( [\p{L}'\-\.0-9]+)*$/u;
+            return regex.test(value) ? undefined :  message ||
+                'Chỉ 1 khoảng trắng cách nhau bởi 2 kí tự,Cuối và đầu chuỗi không có khoảng cách,Phải có ít nhất 2 chữ cái!';
+        }
+    };
+}
+Validator.isPassword = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/;
+            return regex.test(value) ? undefined :  message ||
+                'Phải có kí tự 1 đặt biệt,1 chữ hoa,1 chữ thường,1 số, và tối thiểu 8 kí tự';
+        }
+    };
+}
+Validator.isPhone = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+            return regex.test(value) ? undefined :  message || 'Phải nhập đúng số điện thoại!';
+        }
+    };
+}
+Validator.isNumber = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /^[1-9]*$/;
+            return regex.test(value) ? undefined :  message || 'Phải nhập số!';
+        }
+    };
+}
+Validator.isNumberHave0 = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /^[0-9]*$/;
+            return regex.test(value) ? undefined :  message || 'Phải nhập số!';
+        }
+    };
+}
+Validator.isDiscount = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /^(?:[0-9]|[1-9][0-9](\.\d{1,2})?|100|10.00)$/;
+            return regex.test(value) ? undefined :  message || 'Phải nhập số!';
+        }
+    };
+}
 Validator.isConfirmed = function (selector, getConfirmValue, message) {
     return {
         selector: selector,
         test: function (value) {
             return value === getConfirmValue() ? undefined : message || 'Giá trị nhập vào không chính xác';
         }
-    };
-}
-
-Validator.isBlank = function (selector, message) {
-    return {
-        selector: selector,
-        test: function (value) {
-            if (value.indexOf(' ') >= 0) {
-                return value ? message || 'Vui lòng không nhập dấu khoảng cách' : undefined
-            }
-        }
-    };
-}
-
-Validator.isCutManyBlankByService = function (selector) {
-    return {
-        selector: selector,
-        test: function (value) {
-            var regex = /^(?=.*[a-z|A-Z].{1,})[\p{L}'\-\.0-9]+( [\p{L}'\-\.0-9]+)*$/u;
-            return regex.test(value) ? undefined :
-                'Chỉ 1 khoảng trắng giữa 2 kí tự, cuối và đầu chuỗi không có dấu khoảng cách, phải có ít nhất 1 chữ cái!';
-        }
-    };
-}
-
-Validator.isNotCharacterSpecial = function (selector) {
-    return {
-        selector: selector,
-        test: function (value) {
-            var regex = /^[a-zA-Z0-9&._-]+$/;
-            return regex.test(value) ? undefined : 'Không được nhập kí tự đặt biệt';
-        }
-    };
-}
-
-Validator.isNumberGreaterThan0 = function (selector) {
-    return {
-        selector: selector,
-        test: function (value) {
-            var regex = /^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$/;
-            return regex.test(value) ? undefined : 'Số nhập vào phải lớn hơn 0!';
-        }
-    };
+    }
 }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryProductServiceImpl implements CategoryProductService {
@@ -31,5 +32,38 @@ public class CategoryProductServiceImpl implements CategoryProductService {
             productDtoList.add(beanConfig.modelMapper().map(categoryProductEntity,CategoryProductDto.class));
         }
         return productDtoList;
+    }
+
+    @Override
+    public CategoryProductDto save(CategoryProductDto categoryProductDto) {
+        CategoryProductEntity categoryProductEntity=new CategoryProductEntity();
+        categoryProductEntity=beanConfig.modelMapper().map(categoryProductDto,CategoryProductEntity.class);
+        categoryProductRepository.save(categoryProductEntity);
+        return beanConfig.modelMapper().map(categoryProductEntity,CategoryProductDto.class);
+    }
+
+    @Override
+    public Optional<CategoryProductDto> findOne(long categoryId) {
+        Optional<CategoryProductEntity> optional=categoryProductRepository.findById(categoryId);
+        return optional.map(categoryProductEntity -> beanConfig.modelMapper().map(categoryProductEntity,CategoryProductDto.class));
+    }
+
+    @Override
+    public void deleteCategoryById(long id) {
+        categoryProductRepository.deleteById(id);
+    }
+
+
+    @Override
+    public Optional<CategoryProductDto> findAllByName(String name) {
+        Optional<CategoryProductEntity> optional=categoryProductRepository.findAllByName(name);
+        return optional.map(categoryProductEntity ->
+                beanConfig.modelMapper().map(categoryProductEntity,CategoryProductDto.class));
+    }
+
+    @Override
+    public String findNameByCategoryId(long categoryId) {
+        String nameByCategoryId=categoryProductRepository.findNameByCategoryId(categoryId);
+        return nameByCategoryId;
     }
 }

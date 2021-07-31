@@ -15,13 +15,14 @@ import java.io.Serializable;
 public class OrderDetailDto extends AbstractDto<OrderDetailDto> implements Serializable {
 
     private Long orderId;
-    private String userName;
 
     private Long productId;
 
-    @NotBlank(message = "Không được bỏ trống,Không có khoảng cách!")
+    private String productName;
+
+    private double discountProduct;
+
     private int quantity;
 
-    @NotBlank(message = "Không được bỏ trống,Không có khoảng cách!")
     private double price;
 }

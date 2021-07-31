@@ -2,6 +2,7 @@ package com.edu.fud.projectfootbalpitch.dto;
 
 import lombok.*;
 
+
 import java.io.Serializable;
 
 @Data

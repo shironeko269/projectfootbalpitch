@@ -49,10 +49,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/user/**").hasAnyRole("ADMIN","USER")
+                .antMatchers("/user/**").hasAnyRole("ADMIN","USER","MANAGER")
                 .antMatchers("/manager/**").hasAnyRole("ADMIN","MANAGER")
+//                .antMatchers("/css/**","/js/**","/scss/**","/images/**","/plugins/**",
+//                        "/ajax/**","/usercssjs/**").permitAll()\
                 .and()
                 .csrf().disable()
+//                .oauth2Login().loginProcessingUrl("/login-google")
+//                .and()
                 .formLogin()
                 .loginPage("/sign-in")
                 .loginProcessingUrl("/dologin")

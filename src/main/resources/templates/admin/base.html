@@ -285,8 +285,7 @@
                 <div class="btn-group user-helper-dropdown">
                     <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                     <ul class="dropdown-menu pull-right">
-                        <li><a href="javascript:void(0);"><i class="material-icons">person</i>Thông tin</a></li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">input</i>Đăng xuất</a></li>
+                        <li><a href="javascript:void(0);" th:href="@{/logout}"><i class="material-icons">input</i>Đăng xuất</a></li>
                     </ul>
                 </div>
             </div>
@@ -350,6 +349,9 @@
                     <ul class="ml-menu">
                         <li id="add-new-category-product">
                             <a th:href="@{/admin/add-new-category}" href="#">Thêm mới thể loại</a>
+                        </li>
+                        <li id="list-category">
+                            <a th:href="@{/admin/list-category}" href="#">Danh sách thể loại</a>
                         </li>
                         <li id="add-new-product">
                             <a th:href="@{/admin/add-new-product}" href="#">Thêm mới sản phẩm</a>
@@ -549,17 +551,8 @@
 </section>
 <div layout:fragment="content"></div>
 </div>
-<!--<script type="text/javascript">-->
-<!--    const currentLocation = location.href;-->
-<!--    const menuItem = document.querySelectorAll('a');-->
-<!--    const menuLenght = menuItem.length-->
-<!--    for (let i = 0; i < menuLenght; i++) {-->
-<!--        if (menuItem[i].href == currentLocation) {-->
-<!--            menuItem[i].className = "active"-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
-
+<!--validator-->
+<script th:src="@{../../js/validator.js}"></script>
 <!--rest ai-->
 <!--<script th:src="@{../../ajax/api.js}"></script>-->
 <!-- Jquery Core Js -->
@@ -568,7 +561,7 @@
 <script th:src="@{../../plugins/bootstrap/js/bootstrap.js}"></script>
 
 <!-- Select Plugin Js -->
-<script th:src="@{../../plugins/bootstrap-select/js/bootstrap-select.js}"></script>
+<!--<script th:src="@{../../plugins/bootstrap-select/js/bootstrap-select.js}"></script>-->
 
 <!-- Slimscroll Plugin Js -->
 <script th:src="@{../../plugins/jquery-slimscroll/jquery.slimscroll.js}"></script>
@@ -583,7 +576,7 @@
 <script th:src="@{../../plugins/jquery-inputmask/jquery.inputmask.bundle.js}"></script>
 
 <!-- Multi Select Plugin Js -->
-<script th:src="@{../../plugins/multi-select/js/jquery.multi-select.js}"></script>
+<!--<script th:src="@{../../plugins/multi-select/js/jquery.multi-select.js}"></script>-->
 
 <!-- Jquery Spinner Plugin Js -->
 <script th:src="@{../../plugins/jquery-spinner/js/jquery.spinner.js}"></script>
@@ -620,8 +613,9 @@
 <!-- Custom Js -->
 <script th:src="@{../../js/admin.js}"></script>
 <script th:src="@{../../js/pages/charts/sparkline.js}"></script>
+<script th:src="@{../../js/pages/charts/chartjs.js}"></script>
 <script th:src="@{../../js/pages/tables/jquery-datatable.js}"></script>
-<script th:src="@{../../js/pages/forms/advanced-form-elements.js}"></script>
+<!--<script th:src="@{../../js/pages/forms/advanced-form-elements.js}"></script>-->
 <script th:src="@{../../js/pages/index.js}"></script>
 <script th:src="@{../../js/pages/examples/profile.js}"></script>
 <!-- Jquery DataTable Plugin Js -->

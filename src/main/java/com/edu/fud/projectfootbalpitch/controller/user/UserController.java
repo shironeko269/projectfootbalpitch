@@ -10,9 +10,10 @@ import java.security.Principal;
 public class UserController {
     //profile
     @RequestMapping("/profile")
-    public String openProfile(Principal principal){
+    public Principal openProfile(Principal principal){
         String username = principal.getName();
-        return "user/profile";
+        System.out.println("username"+username);
+        return principal;
     }
     @RequestMapping("/edit-profile")
     public String openUpdateProfile(){

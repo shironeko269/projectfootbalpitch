@@ -4,10 +4,8 @@ import lombok.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.*;
-import javax.persistence.criteria.Fetch;
 
 @Data
 @AllArgsConstructor
@@ -39,7 +37,6 @@ public class UserEntity extends BaseEntity implements Serializable{
     @Column(name = "image")
     private String image;
 
-
     @Column(name = "role")
     private String role;
 
@@ -47,12 +44,17 @@ public class UserEntity extends BaseEntity implements Serializable{
     @JoinColumn(name = "is_member")
     private IsMemberEntity isMember;
 
-    @OneToMany(mappedBy = "userEntityOrder",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "userEntityOrder",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<OrderEntity> orderEntitiesUser =new ArrayList<>();
 
-    @OneToMany(mappedBy = "userEntityPitch",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "userEntityPitch",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<FootballPitchEntity> footballPitchEntitiesUser = new ArrayList<>();
 
     @OneToMany(mappedBy = "userEntityPitchBooking",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<BookFootballPitchEntity> bookFootballPitchEntitiesUser = new ArrayList<>();
+
+    @PreRemove
+    public void deleteUserEmployee(){
+            footballPitchEntitiesUser.forEach(footballPitchEntity -> footballPitchEntity.setUserEntityPitch(null));
+    }
 }

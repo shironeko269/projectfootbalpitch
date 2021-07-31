@@ -28,7 +28,7 @@ public class FootballPitchEntity extends BaseEntity implements Serializable {
     @Column(name = "street_number",nullable = false)
     private String streetNumber;
 
-    @Column(name = "urlMap",columnDefinition = "nvarchar(500) not null")
+    @Column(name = "urlmap",columnDefinition = "nvarchar(500) not null")
     private String urlMap;
 
     @ManyToOne

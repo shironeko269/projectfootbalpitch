@@ -6,7 +6,9 @@
 <head>
     <title>List Sub Pitch</title>
     <!-- JQuery DataTable Css -->
-    <link href="../../plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link th:href="@{../../plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css}" rel="stylesheet">
+    <!-- Sweetalert Css -->
+    <link th:href="@{../../plugins/sweetalert/sweetalert.css}" rel="stylesheet" />
     <script>
         $(document).ready(()=>{
             $("#pitch").addClass("active");
@@ -50,257 +52,100 @@
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
+                                            <th>Id</th>
                                             <th>Tên sân</th>
+                                            <th>Ảnh đại diện</th>
                                             <th>Loại sân</th>
-                                            <th>Mô tả</th>
+                                            <th>Giá tiền / giờ</th>
                                             <th>Sửa</th>
                                             <th>Xóa</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Pitch Type</th>
-                                            <th>Description</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
+                                            <th>Id</th>
+                                            <th>Tên sân</th>
+                                            <th>Ảnh đại diện</th>
+                                            <th>Loại sân</th>
+                                            <th>Giá tiền / giờ</th>
+                                            <th>Sửa</th>
+                                            <th>Xóa</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
+                                        <tr th:each="item:${subPitchDtoList}">
+                                            <td th:text="${item.id}"></td>
+                                            <td th:text="${item.name}">Tiger Nixon</td>
+                                            <td><div class="image">
+                                                <img src="../../images/user.png"
+                                                     th:src="@{'/images/image-subpitch/'+${item.image1}}" width="48" height="48"
+                                                     alt="User" />
+                                            </div></td>
+                                            <td th:text="${item.nameType}">Edinburgh</td>
+                                            <td th:text="${item.price}"></td>
                                             <td> 
-                                                <a href="">
+                                                <a href="#" th:href="@{'/admin/update-sub-pitch-by-pitch/'+${item.id}}">
                                                     <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
                                                 </a>
                                             </td>
                                             <td> 
-                                                <a href="">
+                                                <a href="#"
+                                                   th:data-id="${item.id}" th:data-name="${item.name}"
+                                                   onclick="showCancelMessage(this.getAttribute('data-id'),this.getAttribute('data-name'))"
+                                                >
                                                     <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
                                                 </a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr>
+
                                     </tbody>
                                 </table>
+                                <script>
+                                    //tao
+                                    function showCancelMessage(id,name) {
+                                        swal({
+                                            title: "Bạn chắc chắn?",
+                                            text: "Bạn sẽ không thể khôi phục tệp này!",
+                                            type: "warning",
+                                            showCancelButton: true,
+                                            confirmButtonColor: "#DD6B55",
+                                            confirmButtonText: "Có, Tôi muốn xóa!",
+                                            cancelButtonText: "Không, Bỏ xóa plx!",
+                                            closeOnConfirm: false,
+                                            closeOnCancel: false
+                                        }, function (isConfirm) {
+                                            if (isConfirm) {
+                                                swal("Đã xóa!", "Sân nhỏ đã được xóa thành công", "success");
+                                                deleteNew(id);
+                                            } else {
+                                                swal("Hủy xóa", "Bạn đã hủy xóa sân nhỏ :)", "error");
+                                            }
+                                        });
+                                    }
+                                    function deleteNew(data) {
+                                        $.ajax({
+                                            url: '/admin/delete-sub-pitch/'+data,
+                                            type: 'DELETE',
+                                            success: function (result) {
+                                                setTimeout('location.reload()', 2345);
+                                            },
+                                            error: function (error) {
+                                                window.location.href = "/admin/list-pitch";
+                                            }
+                                        });
+                                    }
+                                </script>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Bootstrap Notify Plugin Js -->
+        <script th:src="@{../../plugins/bootstrap-notify/bootstrap-notify.js}"></script>
+        <!-- SweetAlert Plugin Js -->
+        <script th:src="@{../../plugins/sweetalert/sweetalert.min.js}"></script>
+        <script th:src="@{../../js/pages/ui/dialogs.js}"></script>
     </section>
 </body>
 

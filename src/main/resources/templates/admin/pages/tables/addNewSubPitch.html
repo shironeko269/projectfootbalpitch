@@ -212,50 +212,197 @@
                         <th:block th:text="${#session.removeAttribute('message')}" ></th:block>
                     </div>
                     <div class="body">
-                        <form id="form_validation">
+                        <form id="form_validation" th:action="@{/admin/add-new-sub-pitch}" method="post"
+                            th:object="${objSubPitch}" enctype="multipart/form-data"
+                        >
                             <div class="col-md-6">
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <input
+                                                th:field="*{name}"
                                                 type="text"
                                                 class="form-control"
                                                 name="name"
-                                                required
                                                 id="name"
                                         />
                                         <label class="form-label">Tên sân nhỏ</label>
+                                        <span class="form-message" style="color: red;"></span>
+                                        <div class="alert alert-danger d-block" th:each="e : ${#fields.errors('name')} " th:text="${e}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input
+                                                th:field="*{price}"
+                                                type="text"
+                                                class="form-control"
+                                                name="price"
+                                                id="price"
+                                        />
+                                        <label class="form-label">Giá tiền sân 1h </label>
+                                        <span class="form-message" style="color: red;"></span>
+                                        <div class="alert alert-danger d-block" th:each="e : ${#fields.errors('price')} " th:text="${e}">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col-md-2">
+                                    <label>Chọn loại sân:</label>
+                                </div>
                                 <div class="col-md-3">
-                                    <select class="form-control show-tick">
-                                        <option style="display: none">Loại sân</option>
-                                        <option>5</option>
-                                        <option>7</option>
-                                        <option>11</option>
+                                    <select th:field="*{pitchTypeId}"  class="form-control show-tick">
+                                        <option th:each="item:${listPitchType}" th:value="${item.id}"
+                                                th:text="${item.name}" th:selected="${item.id == objSubPitch.pitchTypeId}">5</option>
                                     </select>
                                 </div>
                             </div>
+
                             <div class="col-md-12">
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <input
+                                                th:field="*{description}"
                                                 type="text"
                                                 class="form-control"
                                                 name="description"
-                                                required
                                                 id="description"
                                         />
+                                        <span class="form-message" style="color: red;"></span>
                                         <label class="form-label">Mô tả</label>
+                                        <div class="alert alert-danger d-block" th:each="e : ${#fields.errors('description')} " th:text="${e}">
+                                        </div>
                                     </div>
+                                </div>
+                            </div>
+                            <script>
+                                function chooseFile1(fileInput) {
+                                    if (fileInput.files && fileInput.files[0]){
+                                        var reader = new FileReader();
+                                        reader.onload = function (e) {
+                                            $('#image1').attr('src',e.target.result);
+                                        }
+                                        reader.readAsDataURL(fileInput.files[0]);
+                                    }
+                                }
+                                function chooseFile2(fileInput) {
+                                    if (fileInput.files && fileInput.files[0]){
+                                        var reader = new FileReader();
+                                        reader.onload = function (e) {
+                                            $('#image2').attr('src',e.target.result);
+                                        }
+                                        reader.readAsDataURL(fileInput.files[0]);
+                                    }
+                                }
+                                function chooseFile3(fileInput) {
+                                    if (fileInput.files && fileInput.files[0]){
+                                        var reader = new FileReader();
+                                        reader.onload = function (e) {
+                                            $('#image3').attr('src',e.target.result);
+                                        }
+                                        reader.readAsDataURL(fileInput.files[0]);
+                                    }
+                                }
+                                function chooseFile4(fileInput) {
+                                    if (fileInput.files && fileInput.files[0]){
+                                        var reader = new FileReader();
+                                        reader.onload = function (e) {
+                                            $('#image4').attr('src',e.target.result);
+                                        }
+                                        reader.readAsDataURL(fileInput.files[0]);
+                                    }
+                                }
+                                function chooseFile5(fileInput) {
+                                    if (fileInput.files && fileInput.files[0]){
+                                        var reader = new FileReader();
+                                        reader.onload = function (e) {
+                                            $('#image5').attr('src',e.target.result);
+                                        }
+                                        reader.readAsDataURL(fileInput.files[0]);
+                                    }
+                                }
+                            </script>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group form-float">
+                                        <div class="form-group">
+                                            <label class="form-label">Ảnh</label>
+                                            <input onchange="chooseFile1(this);" type="file" class="form-control" name="imageParam1">
+                                        </div>
+                                    </div>
+                                    <img    id="image1"
+                                            src="http://placehold.it/500x300"
+                                            class="img-responsive"
+
+                                            alt=""
+
+                                    >
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group form-float">
+                                        <div class="form-group">
+                                            <label class="form-label">Ảnh</label>
+                                            <input onchange="chooseFile2(this);" type="file" class="form-control" name="imageParam2">
+                                        </div>
+                                    </div>
+                                    <img    id="image2"
+                                            src="http://placehold.it/500x300"
+                                            class="img-responsive"
+                                            alt=""
+
+                                    >
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group form-float">
+                                        <div class="form-group">
+                                            <label class="form-label">Ảnh</label>
+                                            <input onchange="chooseFile3(this);" type="file" class="form-control" name="imageParam3">
+                                        </div>
+                                    </div>
+                                    <img    id="image3"
+                                            src="http://placehold.it/500x300"
+                                            class="img-responsive"
+                                            alt=""
+
+                                    >
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group form-float">
+                                        <div class="form-group">
+                                            <label class="form-label">Ảnh</label>
+                                            <input onchange="chooseFile4(this);" type="file" class="form-control" name="imageParam4">
+                                        </div>
+                                    </div>
+                                    <img    id="image4"
+                                            src="http://placehold.it/500x300"
+                                            class="img-responsive"
+                                            alt=""
+
+                                    >
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group form-float">
+                                        <div class="form-group">
+                                            <label class="form-label">Ảnh</label>
+                                            <input onchange="chooseFile5(this);" type="file" class="form-control" name="imageParam5">
+                                        </div>
+                                    </div>
+                                    <img    id="image5"
+                                            src="http://placehold.it/500x300"
+                                            class="img-responsive"
+                                            alt=""
+
+                                    >
                                 </div>
                             </div>
                             <button onclick="showSuccessToast();" class="btn btn-primary waves-effect btn--success"
                                     type="submit">
                                 Thêm tiếp tục sân nhỏ
                             </button>
-                            <a href="profilePitch.html" class="btn btn-primary waves-effect"
+                            <a href="#" th:href="@{/admin/profile-pitch}" class="btn btn-primary waves-effect"
                             >Hoàn thành</a
                             >
                         </form>
@@ -265,18 +412,35 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            Validator({
+                form: '#form_validation',
+                formGroupSelector: '.form-group',
+                errorSelector: '.form-message',
+                rules: [
+                    //name
+                    Validator.minLength('#name', 5),
+                    Validator.isRequired('#name', 'Vui lòng nhập tên sân bóng!'),
+                    Validator.minLength('#name', 5),
+                    Validator.maxLength('#name', 50),
+                    Validator.isCutManyBlankByProduct('#name','Chỉ 1 khoảng trắng cách nhau bởi 2 kí tự,Cuối và' +
+                        ' đầu chuỗi không có khoảng cách,Phải có ít nhất 2 chữ cái, Không có kí tự đặc biệt!'),
+                    //price
+                    Validator.isRequired('#price', 'Vui lòng nhập giá sân bóng!'),
+                    Validator.isNumber('#price', 'Giá sân bóng phải lớn hơn 0!'),
+                    Validator.minLength('#price', 3),
+                    Validator.isBlank('#price', 'Vui lòng không nhập khoảng cách!'),
+                    //description
+                    Validator.minLength('#description', 20),
+                    Validator.maxLength('#description', 500),
+                    Validator.isCutManyBlankByDescription('#description'),
+                ],
+            });
+        });
+    </script>
 </section>
-<script>
-    function chooseFile(fileInput) {
-        if (fileInput.files && fileInput.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $("#image").attr("src", e.target.result);
-            };
-            reader.readAsDataURL(fileInput.files[0]);
-        }
-    }
-</script>
 <script>
     function showSuccessToast() {
         document.getElementById('form_validation').onsubmit = function (e) {

@@ -62,94 +62,57 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="body">
+                        <div class="body" th:if="${orderDetail}">
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <h2>Đơn Hàng 1</h2>
+                                    <div class="col-md-12" >
+                                        <h2 th:text="'Đơn Hàng '+${orderDetail.id}">Đơn Hàng 1</h2>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                Người nhận:
+                                            <div class="col-md-6" th:text="'Người gửi: '+${orderDetail.userNameCreate}">
+                                                Người đặt:
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-6" th:text="'Người nhận: '+${orderDetail.userName}">
                                                 Người đặt:
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-6" th:text="'Số điện thoại: '+${orderDetail.phone}">
                                                 Số điện thoại:
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-6" th:text="'Địa chỉ: '+${orderDetail.address}">
                                                 Địa chỉ:
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-6" th:text="'Trạng thái đơn hàng: '+${orderDetail.statusName}">
                                                 Trạng thái đơn hàng:
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-6" th:text="'Ghi chú: '+${orderDetail.note}">
                                                 Ghi chú:
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-6" th:text="'Trạng thái đơn hàng: '+${orderDetail.paymentOrderName}">
                                                 Phương thức thanh toán:
                                             </div>
-                                            <div class="col-md-6">
-                                                Tổng giá tiền:
-                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <h2>Chi tiết đơn hàng 1</h2>
+                                    <h2 >Các sản phẩm</h2>
+                                    <div class="col-md-12" th:each="item:${listOrderDetail}">
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-3" th:text="'Sản phẩm: '+${item.productName}">
                                                 Sản phẩm:Áo
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-3" th:text="'Số lượng: '+${item.quantity}">
                                                 Số lượng:12 cái
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-3" th:text="'Giá: '+${item.price}">
                                                 Giảm giá:12%
-                                            </div>
-                                            <div class="col-md-3">
-                                                Giá:12 VND
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                Sản phẩm:Áo
-                                            </div>
-                                            <div class="col-md-3">
-                                                Số lượng:12 cái
-                                            </div>
-                                            <div class="col-md-3">
-                                                Giảm giá:12%
-                                            </div>
-                                            <div class="col-md-3">
-                                                Giá:12 VND
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                Sản phẩm:Áo
-                                            </div>
-                                            <div class="col-md-3">
-                                                Số lượng:12 cái
-                                            </div>
-                                            <div class="col-md-3">
-                                                Giảm giá:12%
-                                            </div>
-                                            <div class="col-md-3">
-                                                Giá:12 VND
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
-                                <h4>Tổng giá tiền : 120 VND</h4>
+                                <h4 th:text="'Tổng giá tiền: '+${orderDetail.totalPrice}+' VND'">Tổng giá tiền : 120 VND</h4>
                                 <button class="btn btn-primary">Trở lại</button>
                         </div>
                     </div>

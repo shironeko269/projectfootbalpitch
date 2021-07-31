@@ -1,4 +1,5 @@
 package com.edu.fud.projectfootbalpitch.service.impl;
+import java.security.Provider;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         UserEntity userEntity=userRepository.findOneByUserName(s);
         if (userEntity == null) {
+            UserEntity userGG=new UserEntity();
             throw new UsernameNotFoundException("User not found");
         }
         MyUser myUser = new MyUser(userEntity);

@@ -52,6 +52,13 @@
             </div>
 
             <div class="form-group col-md-auto">
+              <h3>
+                Welcome : <span th:utext="${#request.userPrincipal.name}"></span>
+              </h3>
+              <form th:action="@{/logout}" method="post">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                <input type="submit" value="Logout" />
+              </form>
               <label class="col-3" for="name">TÊN: </label><a class="col-8"  type="text" id="name">gai xinh</a><br>
               <label class="col-3" for="dateOfBirth">NGÀY SINH: </label><a class="col-8"  type="text" id="dateOfBirth">1/1/1999</a><br>
               <label class="col-3" for="gender">GIỚI TÍNH: </label><a class="col-8"  type="text" id="gender">Female</a><br>

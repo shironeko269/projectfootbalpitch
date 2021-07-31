@@ -34,10 +34,18 @@ public class OrderDto extends AbstractDto<OrderDto> implements Serializable {
     private String address;
 
     private String note;
-
+    //
     private Long userId;
 
+    private String userNameCreate;
+
+    private String emailUser;
+    //
     private Long paymentOrderId;
 
+    private String paymentOrderName;
+    //
     private Long statusId;
+
+    private String StatusName;
 }

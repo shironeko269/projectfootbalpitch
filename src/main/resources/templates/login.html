@@ -60,13 +60,15 @@
                             <div class="form-group form-button">
                                     <input type="submit" name="signin" id="signin" class="form-submit" value="ĐĂNG NHẬP"/>
                             </div>
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                         </form>
                         <div class="social-login">
                             <span class="social-label">HOẶC ĐĂNG NHẬP VỚI</span>
                             <ul class="socials">
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                                <li><a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/login-google&response_type=code
+    &client_id=59048210969-nd3uaoaoj85eu996p6vlu5338174ncb8.apps.googleusercontent.com&approval_prompt=force"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
                             </ul>
                         </div>
                     </div>

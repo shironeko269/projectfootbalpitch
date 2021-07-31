@@ -28,6 +28,7 @@ public class FootballPitchScheduleDto extends AbstractDto<FootballPitchScheduleD
 
     private Time timeEnd;
 
+    @NotBlank(message = "Không được bỏ trống,Không có khoảng cách!")
     private double price;
 
     private Long subPitchId;

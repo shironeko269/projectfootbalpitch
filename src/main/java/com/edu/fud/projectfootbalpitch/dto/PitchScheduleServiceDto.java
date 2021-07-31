@@ -18,11 +18,7 @@ public class PitchScheduleServiceDto extends AbstractDto<PitchScheduleServiceDto
 
     private Long servicePitchId;
 
-    private String nameService;
-
     private int quantity;
-
-    private String unit;
 
     private double price;
 }

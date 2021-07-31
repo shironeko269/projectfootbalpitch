@@ -7,6 +7,8 @@
     <title>Danh Sách Nhân Viên</title>
     <!-- JQuery DataTable Css -->
     <link th:href="@{../../plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css}" rel="stylesheet">
+    <!-- Sweetalert Css -->
+    <link th:href="@{../../plugins/sweetalert/sweetalert.css}" rel="stylesheet" />
     <script>
         $(document).ready(()=>{
         $("#employee").addClass("active");
@@ -50,126 +52,51 @@
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
+                                            <th>Id</th>
                                             <th>Tên</th>
                                             <th>Họ và tên</th>
                                             <th>Ảnh</th>
-                                            <th>Ngày sinh</th>
-                                            <th>Giới tính</th>
+                                            <th>Sân quản lí</th>
+                                            <th>Email</th>
+                                            <th>Địa chỉ</th>
                                             <th>Số điện thoại</th>
-                                            <th>Sửa</th>
                                             <th>Xóa</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
+                                            <th>Id</th>
                                             <th>Tên</th>
                                             <th>Họ và tên</th>
                                             <th>Ảnh</th>
-                                            <th>Ngày sinh</th>
-                                            <th>Giới tính</th>
+                                            <th>Sân quản lí</th>
+                                            <th>Email</th>
+                                            <th>Địa chỉ</th>
                                             <th>Số điện thoại</th>
-                                            <th>Sửa</th>
                                             <th>Xóa</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
+                                        <tr th:each="item:${listEmployeeDto}">
+                                            <td th:text="${item.id}">Tiger Nixon</td>
+                                            <td th:text="${item.userName}">System Architect</td>
+                                            <td th:text="${item.fullName}">System Architect</td>
                                             <td><div class="image">
                                                 <img src="../../images/user.png" width="48" height="48" alt="User" />
                                             </div></td>
-                                            <td>Edinburgh</td>
-                                            <td>Nam</td>
-                                            <td>12123165</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
+                                            <td th:text="${item.employeeNamePitch}">Edinburgh</td>
+                                            <td th:text="${item.gmail}">Nam</td>
+                                            <td th:text="${item.address}">12123165</td>
+                                            <td th:text="${item.phone}">12123165</td>
+                                            <td>
+                                                <a href="#"
+                                                   th:data-id="${item.id}" th:data-name="${item.fullName}"
+                                                   onclick="showCancelMessage(this.getAttribute('data-id'),this.getAttribute('data-name'))">
                                                     <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
                                                 </a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td><div class="image">
-                                                <img src="../../images/user.png" width="48" height="48" alt="User" />
-                                            </div></td>
-                                            <td>Edinburgh</td>
-                                            <td>Nam</td>
-                                            <td>12123165</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td><div class="image">
-                                                <img src="../../images/user.png" width="48" height="48" alt="User" />
-                                            </div></td>
-                                            <td>Edinburgh</td>
-                                            <td>Nam</td>
-                                            <td>12123165</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td><div class="image">
-                                                <img src="../../images/user.png" width="48" height="48" alt="User" />
-                                            </div></td>
-                                            <td>Edinburgh</td>
-                                            <td>Nam</td>
-                                            <td>12123165</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td><div class="image">
-                                                <img src="../../images/user.png" width="48" height="48" alt="User" />
-                                            </div></td>
-                                            <td>Edinburgh</td>
-                                            <td>Nam</td>
-                                            <td>12123165</td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">mode_edit</i> </div>
-                                                </a>
-                                            </td>
-                                            <td> 
-                                                <a href="">
-                                                    <div class="demo-google-material-icon"> <i class="material-icons">delete</i></div>
-                                                </a>
-                                            </td>
-                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -178,6 +105,46 @@
                 </div>
             </div>
         </div>
+        <script>
+            //tao
+            function showCancelMessage(id,name) {
+                swal({
+                    title: "Bạn chắc chắn?",
+                    text: "Bạn sẽ không thể khôi phục tệp này!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Có, Tôi muốn xóa!",
+                    cancelButtonText: "Không, Bỏ xóa plx!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                }, function (isConfirm) {
+                    if (isConfirm) {
+                        swal("Đã xóa!", "Nhân viên đã được xóa thành công", "success");
+                        deleteNew(id);
+                    } else {
+                        swal("Hủy xóa", "Bạn đã hủy xóa nhân viên :)", "error");
+                    }
+                });
+            }
+            function deleteNew(data) {
+                $.ajax({
+                    url: '/admin/delete-employee/'+data,
+                    type: 'DELETE',
+                    success: function (result) {
+                        setTimeout('location.reload()', 2345);
+                    },
+                    error: function (error) {
+                        window.location.href = "/admin/list-manager";
+                    }
+                });
+            }
+        </script>
+        <!-- Bootstrap Notify Plugin Js -->
+        <script th:src="@{../../plugins/bootstrap-notify/bootstrap-notify.js}"></script>
+        <!-- SweetAlert Plugin Js -->
+        <script th:src="@{../../plugins/sweetalert/sweetalert.min.js}"></script>
+        <script th:src="@{../../js/pages/ui/dialogs.js}"></script>
     </section>
 
 </body>
