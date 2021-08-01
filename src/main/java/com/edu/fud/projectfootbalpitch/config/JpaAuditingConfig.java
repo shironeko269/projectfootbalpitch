@@ -1,13 +1,11 @@
 package com.edu.fud.projectfootbalpitch.config;
 
 import com.edu.fud.projectfootbalpitch.dto.MyUser;
-import com.edu.fud.projectfootbalpitch.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.util.Optional;

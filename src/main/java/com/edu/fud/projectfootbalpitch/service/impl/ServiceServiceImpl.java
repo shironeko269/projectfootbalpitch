@@ -5,8 +5,6 @@ import com.edu.fud.projectfootbalpitch.constant.SystemConstant;
 import com.edu.fud.projectfootbalpitch.dto.ServiceDto;
 import com.edu.fud.projectfootbalpitch.entity.CategoryServiceEntity;
 import com.edu.fud.projectfootbalpitch.entity.ServiceEntity;
-import com.edu.fud.projectfootbalpitch.repository.CategoryServiceRepository;
-import com.edu.fud.projectfootbalpitch.repository.ServiceRepository;
 import com.edu.fud.projectfootbalpitch.service.ServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

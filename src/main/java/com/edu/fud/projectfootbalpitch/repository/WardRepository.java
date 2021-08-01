@@ -8,6 +8,11 @@ import java.util.List;
 
 public interface WardRepository extends JpaRepository<WardEntity,Long> {
 
-    @Query(value = "select * from wards where district_id]=:distinctId",nativeQuery = true)
+    @Query(value = "select * from wards where district_id=:distinctId",nativeQuery = true)
     List<WardEntity> findAllByDistrictId(long distinctId);
+
+    @Query(value = "select * from wards where id=:wardId",nativeQuery = true)
+    WardEntity findById(long wardId);
+
+
 }

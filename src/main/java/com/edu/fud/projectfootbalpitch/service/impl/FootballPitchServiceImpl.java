@@ -5,12 +5,9 @@ import com.edu.fud.projectfootbalpitch.dto.FootBallPitchDto;
 import com.edu.fud.projectfootbalpitch.entity.FootballPitchEntity;
 import com.edu.fud.projectfootbalpitch.entity.UserEntity;
 import com.edu.fud.projectfootbalpitch.entity.WardEntity;
-import com.edu.fud.projectfootbalpitch.repository.FootballPitchRepository;
 import com.edu.fud.projectfootbalpitch.service.FootbalPitchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class FootballPitchServiceImpl implements FootbalPitchService {

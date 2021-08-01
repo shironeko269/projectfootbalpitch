@@ -2,11 +2,7 @@ package com.edu.fud.projectfootbalpitch.service.impl;
 
 import com.edu.fud.projectfootbalpitch.config.BeanConfig;
 import com.edu.fud.projectfootbalpitch.dto.CategoryServiceDto;
-import com.edu.fud.projectfootbalpitch.dto.ServiceDto;
-import com.edu.fud.projectfootbalpitch.entity.CategoryProductEntity;
 import com.edu.fud.projectfootbalpitch.entity.CategoryServiceEntity;
-import com.edu.fud.projectfootbalpitch.entity.ServiceEntity;
-import com.edu.fud.projectfootbalpitch.repository.CategoryServiceRepository;
 import com.edu.fud.projectfootbalpitch.service.CategoryServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,13 +1,8 @@
 package com.edu.fud.projectfootbalpitch.service.impl;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.edu.fud.projectfootbalpitch.dto.MyUser;
 import com.edu.fud.projectfootbalpitch.entity.UserEntity;
-import com.edu.fud.projectfootbalpitch.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

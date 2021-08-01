@@ -1,15 +1,11 @@
 package com.edu.fud.projectfootbalpitch.controller;
 
-import com.edu.fud.projectfootbalpitch.dto.CategoryProductDto;
 import com.edu.fud.projectfootbalpitch.dto.ProductDto;
 import com.edu.fud.projectfootbalpitch.dto.UserDto;
-import com.edu.fud.projectfootbalpitch.entity.ProductsEntity;
-import com.edu.fud.projectfootbalpitch.repository.UserRepository;
 import com.edu.fud.projectfootbalpitch.service.CategoryProductService;
 import com.edu.fud.projectfootbalpitch.service.ProductService;
 import com.edu.fud.projectfootbalpitch.service.UserService;
 import com.edu.fud.projectfootbalpitch.util.Message;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
@@ -17,8 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.validation.Errors;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -28,7 +22,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 public class HomeController {

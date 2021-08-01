@@ -2,16 +2,10 @@ package com.edu.fud.projectfootbalpitch.service.impl;
 
 import com.edu.fud.projectfootbalpitch.config.BeanConfig;
 import com.edu.fud.projectfootbalpitch.converter.ProductConverter;
-import com.edu.fud.projectfootbalpitch.dto.CategoryProductDto;
 import com.edu.fud.projectfootbalpitch.dto.ProductDto;
-import com.edu.fud.projectfootbalpitch.dto.UserDto;
 import com.edu.fud.projectfootbalpitch.entity.CategoryProductEntity;
 import com.edu.fud.projectfootbalpitch.entity.ProductsEntity;
-import com.edu.fud.projectfootbalpitch.repository.CategoryProductRepository;
-import com.edu.fud.projectfootbalpitch.repository.ProductRepository;
 import com.edu.fud.projectfootbalpitch.service.ProductService;
-import com.edu.fud.projectfootbalpitch.service.UserService;
-import org.modelmapper.Converter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

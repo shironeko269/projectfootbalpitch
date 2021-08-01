@@ -3,13 +3,11 @@ package com.edu.fud.projectfootbalpitch.service.impl;
 import com.edu.fud.projectfootbalpitch.config.BeanConfig;
 import com.edu.fud.projectfootbalpitch.dto.UserDto;
 import com.edu.fud.projectfootbalpitch.entity.UserEntity;
-import com.edu.fud.projectfootbalpitch.repository.UserRepository;
 import com.edu.fud.projectfootbalpitch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;

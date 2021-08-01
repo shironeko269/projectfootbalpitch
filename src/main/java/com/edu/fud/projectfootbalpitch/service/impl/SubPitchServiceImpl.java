@@ -1,11 +1,8 @@
 package com.edu.fud.projectfootbalpitch.service.impl;
 
 import com.edu.fud.projectfootbalpitch.config.BeanConfig;
-import com.edu.fud.projectfootbalpitch.dto.FootBallPitchDto;
 import com.edu.fud.projectfootbalpitch.dto.SubPitchDto;
-import com.edu.fud.projectfootbalpitch.entity.FootballPitchEntity;
 import com.edu.fud.projectfootbalpitch.entity.SubPitchEntity;
-import com.edu.fud.projectfootbalpitch.repository.SubPitchRepository;
 import com.edu.fud.projectfootbalpitch.service.SubPitchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -3,7 +3,6 @@ package com.edu.fud.projectfootbalpitch.service.impl;
 import com.edu.fud.projectfootbalpitch.config.BeanConfig;
 import com.edu.fud.projectfootbalpitch.dto.StatusBookFootballPitchDto;
 import com.edu.fud.projectfootbalpitch.entity.StatusBookFootballPitchEntity;
-import com.edu.fud.projectfootbalpitch.repository.StatusBookFootballPitchRepository;
 import com.edu.fud.projectfootbalpitch.service.StatusBookFootballPitchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
